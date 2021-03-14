@@ -2,6 +2,8 @@
   area: Belcara
   trailhead: Belcara Picnic Area
   stroller: no
+  viewAtTheEnd: yes
+  hilly: somewhat
   notes: |
     Forested walk, some stairs. You finish at a gravel beach that looks out at
     Jug Island
@@ -10,6 +12,8 @@
   area: Belcara
   trailhead: Belcara Picnic Area
   stroller: no
+  hilly: no
+  viewAtTheEnd: yes
   notes: |
     Lots of views along the way, you can stop at Cod Rock if you want to give up
     early. There's a small rocky beach (Maple Beach) near Admiralty Point which
@@ -19,6 +23,8 @@
   area: Belcara
   trailhead: Whitepine Beach
   stroller: no
+  hilly: yes
+  viewAtTheEnd: no
   notes: |
     lots of little springs crossing the trail (under little bridges). Very fun
     even if you only go a little ways up
