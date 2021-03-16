@@ -2,6 +2,8 @@ import { h } from 'preact';
 
 import { App } from './App';
 import { Map } from './Map';
+import { MapMarker } from './MapMarker';
+import * as coquitlam from './coquitlam.json';
 
 export const IndexApp = ({ hikes }) => (
   <App title='Coquitlam Family Hikes'>
@@ -14,6 +16,10 @@ export const IndexApp = ({ hikes }) => (
         </code></pre>
       </div>
     )) }
-    <Map latitude={hikes[0].trailhead.latitude} longitude={hikes[0].trailhead.longitude} zoom={4}/>
+    <Map longitude={coquitlam.longitude} latitude={coquitlam.latitude} zoom={coquitlam.zoom} >
+      { hikes.map(hike => (
+        <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title={hike.name} />
+      )) }
+    </Map>
   </App>
 );
