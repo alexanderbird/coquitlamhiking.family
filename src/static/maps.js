@@ -13,7 +13,7 @@ function initMap() {
   const { latitude, longitude, zoom } = mapElement.dataset;
   const map = new google.maps.Map(mapElement, {
     center: { lat: Number(latitude), lng: Number(longitude) },
-    zoom: Number(zoom),
+    zoom: processZoom(zoom),
   });
   
   const eachDetail = [];
@@ -34,4 +34,15 @@ function initMap() {
   });
 
   map.addListener('click', () => eachDetail.forEach(d => d.close()));
+}
+
+function processZoom(zoomString) {
+  const zoom = Number(zoomString);
+  if (window.screen.width < 600) {
+    return zoom / 1.1;
+  }
+  if (window.screen.width < 850) {
+    return zoom / 1.05;
+  }
+  return zoom;
 }

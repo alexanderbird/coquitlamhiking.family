@@ -7,7 +7,7 @@ import { MapMarker } from './MapMarker';
 export const HikeApp: FunctionComponent<{ hike: any }> = ({ hike }) => (
   <App title={`${hike.name} | Coquitlam Family Hikes`}>
     <h1>{hike.name}</h1>
-    <Map latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} zoom={16}>
+    <Map latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} zoom={14}>
       <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title='Trailhead' />
     </Map>
     <pre><code>
