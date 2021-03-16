@@ -1,4 +1,5 @@
 - name: Jug Island
+  slug: jug-island
   area: Belcara
   trailhead: Belcara Picnic Area
   stroller: no
@@ -9,6 +10,7 @@
     Jug Island
 
 - name: Admiralty Point
+  slug: admiralty-point
   area: Belcara
   trailhead: Belcara Picnic Area
   stroller: no
@@ -20,6 +22,7 @@
     is great for throwing rocks into the water.
 
 - name: Buntzen Ridge & Sugar Mountain Trail
+  slug: buntzen-ridge-west
   area: Belcara
   trailhead: Whitepine Beach
   stroller: no
