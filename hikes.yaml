@@ -36,9 +36,69 @@
     longitude: -122.8838772
   stroller: no
   hilly: yes
-  viewAtTheEnd: no
+  viewAtTheEnd: forest
   notes: |
     lots of little springs crossing the trail (under little bridges). Very fun
     even if you only go a little ways up
 
     Wide, slow switchbacks up the ridge
+
+- name: Along the Pitt River
+  slug: pitt-river
+  area: Pitt River
+  trailhead:
+    name: East end of Prairie Ave
+    latitude: 49.2711701
+    longitude: -122.714714
+  stroller: yes
+  viewAtTheEnd: Pitt River Valley & Golden Ears
+  hilly: no
+  notes: ""
+
+- name: Deboville Slough (North Trail)
+  slug: deboville-slough
+  area: Pitt River
+  trailhead:
+    name: Port Coquitlam Dyke Trail Head
+    latitude: 49.2857381
+    longitude: -122.7335919
+  stroller: yes
+  viewAtTheEnd: Pitt River Valley & Golden Ears
+  hilly: no
+  notes: ""
+
+- name: Minnekhada
+  slug: minnekhada
+  area: Pitt River
+  trailhead:
+    name: Minnekhada Quarry Road
+    latitude: 49.295091
+    longitude: -122.7150225
+  stroller: no
+  hilly: somewhat
+  viewAtTheEnd: Marshes
+  notes: ""
+
+- name: Pinecone Burke Provincial Park
+  slug: pinecone-burke
+  area: Harper Road
+  trailhead:
+    name: End of Harper Road
+    latitude: 49.315355
+    longitude: -122.7467002
+  stroller: no
+  hilly: yes
+  viewAtTheEnd: forest
+  notes: ""
+
+- name: Harper Park
+  slug: harper-park
+  area: Harper Road
+  trailhead:
+    name: North-East Harper Park
+    latitude: 49.303515
+    longitude: -122.7437609
+  stroller: yes
+  hilly: yes
+  viewAtTheEnd: forest and creek
+  notes: ""
