@@ -1,7 +1,10 @@
 - name: Jug Island
   slug: jug-island
   area: Belcara
-  trailhead: Belcara Picnic Area
+  trailhead:
+    name: Belcara Picnic Area
+    latitude: 49.3129465
+    longitude: -122.9236126
   stroller: no
   viewAtTheEnd: Indian Arm & Jug Island
   hilly: somewhat
@@ -12,7 +15,10 @@
 - name: Admiralty Point
   slug: admiralty-point
   area: Belcara
-  trailhead: Belcara Picnic Area
+  trailhead:
+    name: Belcara Picnic Area
+    latitude: 49.3124338
+    longitude: -122.925364
   stroller: no
   hilly: no
   viewAtTheEnd: Burrard Inlet
@@ -24,7 +30,10 @@
 - name: Buntzen Ridge & Sugar Mountain Trail
   slug: buntzen-ridge-west
   area: Belcara
-  trailhead: Whitepine Beach
+  trailhead:
+    name: Whitepine Beach
+    latitude: 49.3240313
+    longitude: -122.8838772
   stroller: no
   hilly: yes
   viewAtTheEnd: no
