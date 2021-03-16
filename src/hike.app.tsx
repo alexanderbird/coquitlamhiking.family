@@ -8,7 +8,11 @@ export const HikeApp: FunctionComponent<{ hike: any }> = ({ hike }) => (
   <App title={`${hike.name} | Coquitlam Family Hikes`}>
     <h1>{hike.name}</h1>
     <Map latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} zoom={14}>
-      <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title='Trailhead' />
+      <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title='Trailhead' >
+        Trailhead:
+        <br/><b>{hike.trailhead.name}</b>
+        <br/><a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>Open in Google Maps</a>
+      </MapMarker>
     </Map>
     <pre><code>
       { JSON.stringify(hike, null, 2) }
