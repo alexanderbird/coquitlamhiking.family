@@ -16,12 +16,22 @@ function initMap() {
     zoom: Number(zoom),
   });
   
+  const eachDetail = [];
   markers.forEach(({ latitude, longitude, title, body }) => {
-
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
       position: { lat: latitude, lng: longitude },
       map,
       title,
     });
+
+    const detailText = body || title;
+    const detail = new google.maps.InfoWindow({ content: detailText });
+    eachDetail.push(detail);
+    marker.addListener('click', () => {
+      eachDetail.forEach(d => d.close());
+      detail.open(map, marker);
+    });
   });
+
+  map.addListener('click', () => eachDetail.forEach(d => d.close()));
 }
