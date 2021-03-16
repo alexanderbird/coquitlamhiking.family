@@ -4,6 +4,7 @@
   "description": "Inventory of family-friendly hikes in Coquitlam and the surrounding area",
   "main": "index.js",
   "scripts": {
+    "start": "http-server build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf build",
     "mkdir": "mkdir -p build",
@@ -22,6 +23,8 @@
   "homepage": "https://github.com/alexanderbird/coquitlamhiking.family#readme",
   "devDependencies": {
     "@types/node": "^14.14.35",
+    "dotenv": "^8.2.0",
+    "http-server": "^0.12.3",
     "js-yaml": "^4.0.0",
     "npm-run-all": "^4.1.5",
     "preact": "^10.5.13",
