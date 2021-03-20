@@ -76,7 +76,7 @@
     longitude: -122.7150225
   stroller: no
   hilly: somewhat
-  view: Marshes
+  view: wetland
   notes: ""
 
 - name: Pinecone Burke Provincial Park
@@ -128,3 +128,42 @@
   links:
     - https://www.vancouvertrails.com/trails/cascade-falls/
   notes: ""
+
+- name: Como Lake
+  slug: como-lake
+  area: Coquitlam
+  trailhead:
+    name: Como Lake Park
+    latitude: 49.2607763
+    longitude: -122.8574636
+  stroller: yes
+  hilly: no
+  view: lake
+  notes: ""
+
+- name: Mundy Park
+  slug: mundy-park
+  area: Coquitlam
+  trailhead: 
+    name: Mundy Park Hillcrest Parking Lot
+    latitude: 49.2582235
+    longitude: -122.8344836
+  stroller: yes
+  hilly: no
+  view: lake
+  notes: |
+    disk golf, epic place structure
+
+- name: Colony Farm Regional Park
+  slug: colony-farm
+  area: Port Coquitlam
+  trailhead:
+    name: Poco Trail Head
+    latitude: 49.2516804
+    longitude: -122.7958043
+  stroller: yes
+  hilly: no
+  view: wetland
+  notes: |
+    big, wide trails that are great for social walks where everyone's pushing a
+    stroller
