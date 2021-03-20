@@ -6,7 +6,7 @@
     latitude: 49.3129465
     longitude: -122.9236126
   stroller: no
-  viewAtTheEnd: Indian Arm & Jug Island
+  view: Indian Arm & Jug Island
   hilly: somewhat
   notes: |
     Forested walk, some stairs. You finish at a gravel beach that looks out at
@@ -21,7 +21,7 @@
     longitude: -122.925364
   stroller: no
   hilly: no
-  viewAtTheEnd: Burrard Inlet
+  view: Burrard Inlet
   notes: |
     Lots of views along the way, you can stop at Cod Rock if you want to give up
     early. There's a small rocky beach (Maple Beach) near Admiralty Point which
@@ -36,7 +36,7 @@
     longitude: -122.8838772
   stroller: no
   hilly: yes
-  viewAtTheEnd: forest
+  view: forest
   notes: |
     lots of little springs crossing the trail (under little bridges). Very fun
     even if you only go a little ways up
@@ -51,7 +51,7 @@
     latitude: 49.2711701
     longitude: -122.714714
   stroller: yes
-  viewAtTheEnd: Pitt River Valley & Golden Ears
+  view: Pitt River Valley & Golden Ears
   hilly: no
   notes: ""
 
@@ -63,7 +63,7 @@
     latitude: 49.2857381
     longitude: -122.7335919
   stroller: yes
-  viewAtTheEnd: Pitt River Valley & Golden Ears
+  view: Pitt River Valley & Golden Ears
   hilly: no
   notes: ""
 
@@ -76,7 +76,7 @@
     longitude: -122.7150225
   stroller: no
   hilly: somewhat
-  viewAtTheEnd: Marshes
+  view: Marshes
   notes: ""
 
 - name: Pinecone Burke Provincial Park
@@ -88,7 +88,7 @@
     longitude: -122.7467002
   stroller: no
   hilly: yes
-  viewAtTheEnd: forest
+  view: forest
   notes: ""
 
 - name: Harper Park
@@ -100,5 +100,31 @@
     longitude: -122.7437609
   stroller: yes
   hilly: yes
-  viewAtTheEnd: forest and creek
+  view: forest and creek
+  notes: ""
+
+- name: Coquitlam River Pathway
+  slug: coquitlam-river-pathway
+  area: Coquitlam
+  trailhead:
+    name: Shaugnessy at Patricia Ave
+    latitude: 49.2769144
+    longitude: -122.7733465
+  stroller: yes
+  hilly: no
+  view: river
+  notes: ""
+
+- name: Cascade Falls
+  slug: cascade-falls
+  area: Mission
+  trailhead:
+    name: Cascade Falls Regional Park
+    latitude: 49.2743061
+    longitude: -122.2170936
+  stroller: no
+  hilly: yes
+  view: waterfall
+  links:
+    - https://www.vancouvertrails.com/trails/cascade-falls/
   notes: ""
