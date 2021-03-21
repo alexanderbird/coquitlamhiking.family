@@ -25,11 +25,12 @@ td, th {
   display: flex;
   flex-direction: row;
   align-content: end;
+  justify-content: space-between;
 }
 
 .trail-summary > * {
-  margin-top: auto;
-  margin-right: 10px;
+  margin: auto;
+  padding-right: 10px;
 }
 
 .summary-icon {
