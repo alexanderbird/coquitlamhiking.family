@@ -21,6 +21,7 @@ function initMap() {
   markers.forEach(({ latitude, longitude, title, body }) => {
     const marker = new google.maps.Marker({
       position: { lat: latitude, lng: longitude },
+      icon: '/marker.png',
       map,
       title,
     });
