@@ -6,3 +6,17 @@
 .hike__header h1 {
   display: inline-block;
 }
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 10px;
+  width: 100%;
+  table-layout: fixed;
+}
+
+td, th {
+  border: 1px solid black;
+  padding: 6px;
+  vertical-align: top;
+  word-wrap: break-word;
+}
