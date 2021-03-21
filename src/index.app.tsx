@@ -3,6 +3,7 @@ import { h } from 'preact';
 import { App } from './App';
 import { Map } from './Map';
 import { MapMarker } from './MapMarker';
+import { TrailSummary } from './TrailSummary';
 import * as coquitlam from './coquitlam.json';
 
 export const IndexApp = ({ hikes }) => (
@@ -14,9 +15,7 @@ export const IndexApp = ({ hikes }) => (
           <div>
             <h3><a href={`./${hike.slug}.html`}>{hike.name}</a></h3>
             <div>
-              <div>Stroller: {hike.stroller}</div>
-              <div>Hilly: {hike.hilly}</div>
-              <div>View: {hike.view}</div>
+              <TrailSummary {...hike} />
             </div>
           </div>
         </MapMarker>
@@ -28,9 +27,7 @@ export const IndexApp = ({ hikes }) => (
           <th>Hike</th>
           <th>Area</th>
           <th>Trailhead</th>
-          <th>Stroller</th>
-          <th>Hilly</th>
-          <th>View</th>
+          <th>Trail</th>
         </tr>
       </thead>
       <tbody>
@@ -39,9 +36,7 @@ export const IndexApp = ({ hikes }) => (
             <td><a href={`./${hike.slug}.html`}>{hike.name}</a></td>
             <td>{hike.area}</td>
             <td>{hike.trailhead.name}</td>
-            <td>{hike.stroller}</td>
-            <td>{hike.hilly}</td>
-            <td>{hike.view}</td>
+            <td><TrailSummary {...hike} /></td>
           </tr>
         )) }
         
