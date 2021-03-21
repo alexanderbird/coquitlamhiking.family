@@ -1,5 +1,5 @@
 {
-  "name": "coquitlamhiking.family",
+  "name": "hiker.family",
   "version": "1.0.0",
   "description": "Inventory of family-friendly hikes in Coquitlam and the surrounding area",
   "main": "index.js",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexanderbird/coquitlamhiking.family.git"
+    "url": "git+https://github.com/alexanderbird/hiker.family.git"
   },
   "author": "Alexander Bird",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/alexanderbird/coquitlamhiking.family/issues"
+    "url": "https://github.com/alexanderbird/hiker.family/issues"
   },
-  "homepage": "https://github.com/alexanderbird/coquitlamhiking.family#readme",
+  "homepage": "https://hiker.family",
   "devDependencies": {
     "@types/node": "^14.14.35",
     "dotenv": "^8.2.0",
