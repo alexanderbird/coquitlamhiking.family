@@ -13,6 +13,7 @@ function initMap() {
   const { latitude, longitude, zoom } = mapElement.dataset;
   const map = new google.maps.Map(mapElement, {
     center: { lat: Number(latitude), lng: Number(longitude) },
+    styles: mapStyles,
     zoom: processZoom(zoom),
   });
   
