@@ -26,7 +26,6 @@ export const IndexApp = ({ hikes }) => (
         <tr>
           <th>Hike</th>
           <th>Area</th>
-          <th>Trailhead</th>
           <th>Trail</th>
         </tr>
       </thead>
@@ -35,7 +34,6 @@ export const IndexApp = ({ hikes }) => (
           <tr>
             <td><a href={`./${hike.slug}.html`}>{hike.name}</a></td>
             <td>{hike.area}</td>
-            <td>{hike.trailhead.name}</td>
             <td><TrailSummary {...hike} /></td>
           </tr>
         )) }
