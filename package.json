@@ -11,7 +11,7 @@
     "mkdir": "mkdir -p build",
     "build": "ts-node ./build.tsx",
     "netlify:build": "run-s clean mkdir build",
-    "watch": "nodemon --exec 'npm run build' --ext '*.*' --watch src"
+    "watch": "nodemon --exec 'npm run build' --ext '*.*' --watch src --watch hikes.yaml"
   },
   "repository": {
     "type": "git",

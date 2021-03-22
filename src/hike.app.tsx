@@ -7,7 +7,7 @@ import { TrailSummary } from './TrailSummary';
 
 export const HikeApp: FunctionComponent<{ hike: any }> = ({ hike }) => (
   <App title={`${hike.name} | Coquitlam Family Hikes`}>
-    <div class='hike__header'><a href="/">Home</a> &gt; <h1>{hike.name}</h1></div>
+    <nav><h1><a href="/">Coquitlam Family Hikes</a></h1> &gt; <h2>{hike.name}</h2></nav>
     <div>{hike.area} Area</div>
     <TrailSummary {...hike} />
     { hike.notes && (<>

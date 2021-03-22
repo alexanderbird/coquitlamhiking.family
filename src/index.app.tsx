@@ -8,7 +8,7 @@ import * as coquitlam from './coquitlam.json';
 
 export const IndexApp = ({ hikes }) => (
   <App title='Coquitlam Family Hikes'>
-    <h1>Coquitlam Family Hikes</h1>
+    <nav><h1>Coquitlam Family Hikes</h1></nav>
     <Map longitude={coquitlam.longitude} latitude={coquitlam.latitude} zoom={coquitlam.zoom} >
       { hikes.map(hike => (
         <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title={hike.name} >
