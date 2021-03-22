@@ -7,6 +7,6 @@ export const TrailSummary = ({ hilly, stroller, view }) => (
   <div class='trail-summary'>
     <Hilly level={hilly} />
     <Stroller level={stroller} />
-    <View label={view} />
+    <View {...view} />
   </div>
 )

@@ -6,7 +6,9 @@
     latitude: 49.3129465
     longitude: -122.9236126
   stroller: no
-  view: Indian Arm & Jug Island
+  view:
+    type: ocean
+    text: Indian Arm & Jug Island
   hilly: somewhat
   notes: |
     Forested walk, some stairs. You finish at a gravel beach that looks out at
@@ -21,7 +23,9 @@
     longitude: -122.925364
   stroller: no
   hilly: no
-  view: Burrard Inlet
+  view:
+    type: ocean
+    text: Burrard Inlet
   notes: |
     Lots of views along the way, you can stop at Cod Rock if you want to give up
     early. There's a small rocky beach (Maple Beach) near Admiralty Point which
@@ -36,7 +40,9 @@
     longitude: -122.8838772
   stroller: no
   hilly: yes
-  view: forest
+  view:
+    type: forest
+    text: Forest
   notes: |
     Wide, slow switchbacks up the ridge
 
@@ -55,7 +61,9 @@
     latitude: 49.2711701
     longitude: -122.714714
   stroller: yes
-  view: Pitt River Valley & Golden Ears
+  view:
+    type: mountain
+    text: Pitt River Valley & Golden Ears
   hilly: no
   notes: ""
 
@@ -67,7 +75,9 @@
     latitude: 49.2857381
     longitude: -122.7335919
   stroller: yes
-  view: Pitt River Valley & Golden Ears
+  view:
+    type: mountain
+    text: Pitt River Valley & Golden Ears
   hilly: no
   notes: ""
 
@@ -80,7 +90,9 @@
     longitude: -122.7150225
   stroller: no
   hilly: somewhat
-  view: wetland
+  view:
+    type: wetland
+    text: Wetland
   notes: ""
 
 - name: Pinecone Burke Provincial Park
@@ -92,7 +104,9 @@
     longitude: -122.7467002
   stroller: no
   hilly: yes
-  view: forest
+  view:
+    type: forest
+    text: Forest
   notes: ""
 
 - name: Harper Park
@@ -104,7 +118,9 @@
     longitude: -122.7437609
   stroller: yes
   hilly: yes
-  view: forest and creek
+  view:
+    type: river
+    text: Forest & Creek
   notes: ""
 
 - name: Coquitlam River Pathway
@@ -116,7 +132,9 @@
     longitude: -122.7733465
   stroller: yes
   hilly: no
-  view: river
+  view:
+    type: river
+    text: Coquitlam River
   notes: ""
 
 - name: Cascade Falls
@@ -128,7 +146,9 @@
     longitude: -122.2170936
   stroller: no
   hilly: yes
-  view: waterfall
+  view:
+    type: waterfall
+    text: Waterfall
   links:
     - https://www.vancouvertrails.com/trails/cascade-falls/
   notes: ""
@@ -142,7 +162,9 @@
     longitude: -122.8574636
   stroller: yes
   hilly: no
-  view: lake
+  view:
+    type: ocean
+    text: Lake
   notes: ""
 
 - name: Mundy Park
@@ -154,7 +176,9 @@
     longitude: -122.8344836
   stroller: yes
   hilly: no
-  view: lake
+  view:
+    type: ocean
+    text: Lake
   notes: |
     disk golf, epic place structure
 
@@ -167,7 +191,9 @@
     longitude: -122.7958043
   stroller: yes
   hilly: no
-  view: wetland
+  view:
+    type: wetland
+    text: Wetland
   notes: |
     big, wide trails that are great for social walks where everyone's pushing a
     stroller
