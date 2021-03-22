@@ -24,16 +24,16 @@ export const IndexApp = ({ hikes }) => (
     <table>
       <thead>
         <tr>
-          <th>Hike</th>
           <th>Area</th>
+          <th>Hike</th>
           <th>Trail</th>
         </tr>
       </thead>
       <tbody>
         { hikes.sort((lhs, rhs) => lhs.area > rhs.area ? 1 : -1).map(hike => (
           <tr>
-            <td><a href={`./${hike.slug}.html`}>{hike.name}</a></td>
             <td>{hike.area}</td>
+            <td><a href={`./${hike.slug}.html`}>{hike.name}</a></td>
             <td><TrailSummary {...hike} /></td>
           </tr>
         )) }
