@@ -8,7 +8,7 @@
   stroller: no
   view:
     type: ocean
-    text: Indian Arm & Jug Island
+    text: Ocean Inlet
   hilly: somewhat
   notes: |
     Forested walk, some stairs. You finish at a gravel beach that looks out at
@@ -25,7 +25,7 @@
   hilly: no
   view:
     type: ocean
-    text: Burrard Inlet
+    text: Ocean Inlet
   notes: |
     Lots of views along the way, you can stop at Cod Rock if you want to give up
     early. There's a small rocky beach (Maple Beach) near Admiralty Point which
@@ -63,7 +63,7 @@
   stroller: yes
   view:
     type: mountain
-    text: Pitt River Valley & Golden Ears
+    text: River Valley & Mountains
   hilly: no
   notes: ""
 
@@ -77,7 +77,7 @@
   stroller: yes
   view:
     type: mountain
-    text: Pitt River Valley & Golden Ears
+    text: River Valley & Mountains
   hilly: no
   notes: ""
 
@@ -134,7 +134,7 @@
   hilly: no
   view:
     type: river
-    text: Coquitlam River
+    text: River
   notes: ""
 
 - name: Cascade Falls
