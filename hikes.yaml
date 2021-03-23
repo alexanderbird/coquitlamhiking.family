@@ -93,10 +93,10 @@
   hilly: no
   notes: ""
   images:
-    - 001@3x4
-    - 002@5x4
-    - 003@5x4
-    - 004@5x4
+    - 001@4x3
+    - 002@4x3
+    - 003@4x3
+    - 004@3x4
 
 - name: Minnekhada
   slug: minnekhada
