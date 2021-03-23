@@ -114,7 +114,7 @@
   images:
     - 001@3x4
     - 002@5x4
-    - 003@10x3
+    - 003@12x4
     - 004@3x4
 
 - name: Pinecone Burke Provincial Park
