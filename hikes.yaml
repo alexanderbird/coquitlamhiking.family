@@ -72,12 +72,12 @@
   hilly: no
   notes: ""
   images:
-    - 001@4x3
-    - 002@4x3
-    - 003@4x3
-    - 004@4x3
+    - 001@5x4
+    - 002@5x4
+    - 003@5x4
+    - 004@5x4
     - 005@3x4
-    - 006@4x3
+    - 006@5x4
 
 - name: Deboville Slough (North Trail)
   slug: deboville-slough
@@ -94,9 +94,9 @@
   notes: ""
   images:
     - 001@3x4
-    - 002@4x3
-    - 003@4x3
-    - 004@4x3
+    - 002@5x4
+    - 003@5x4
+    - 004@5x4
 
 - name: Minnekhada
   slug: minnekhada
@@ -113,7 +113,7 @@
   notes: ""
   images:
     - 001@3x4
-    - 002@4x3
+    - 002@5x4
     - 003@10x3
     - 004@3x4
 
@@ -131,11 +131,11 @@
     text: Forest
   notes: ""
   images:
-    - 001@4x3
-    - 002@4x3
-    - 003@4x3
-    - 004@4x3
-    - 005@4x3
+    - 001@5x4
+    - 002@5x4
+    - 003@5x4
+    - 004@5x4
+    - 005@5x4
 
 - name: Harper Park
   slug: harper-park
@@ -241,5 +241,5 @@
   notes: |
     A discrete little trail along Coquitlam River. Park at the end of the road.
   images:
-    - 001@4x3
+    - 001@5x4
     - 002@12x4
