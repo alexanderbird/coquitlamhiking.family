@@ -197,3 +197,18 @@
   notes: |
     big, wide trails that are great for social walks where everyone's pushing a
     stroller
+
+- name: Galette Ave Coquitlam River Trail
+  slug: galette-ave-coquitlam-river
+  area: Coquitlam
+  trailhead:
+    name: End of Galette Ave
+    latitude: 49.3030917
+    longitude: -122.7706018
+  stroller: no
+  hilly: no
+  view:
+    type: river
+    text: River
+  notes: |
+    A discrete little trail along Coquitlam River. Park at the end of the road.
