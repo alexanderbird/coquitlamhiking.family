@@ -21,24 +21,20 @@ export const MainPage = ({ hikes }) => (
         </MapMarker>
       )) }
     </Map>
-    <table>
-      <thead>
-        <tr>
-          <th>Area</th>
-          <th>Hike</th>
-          <th>Trail</th>
-        </tr>
-      </thead>
-      <tbody>
-        { hikes.sort((lhs, rhs) => lhs.area > rhs.area ? 1 : -1).map(hike => (
-          <tr>
-            <td>{hike.area}</td>
-            <td><a href={`./${hike.slug}.html`}>{hike.name}</a></td>
-            <td><TrailSummary {...hike} /></td>
-          </tr>
-        )) }
-        
-      </tbody>
-    </table>
+    <div class='hike-tiles'>
+      { hikes.sort((lhs, rhs) => lhs.area > rhs.area ? 1 : -1).map(hike => (
+        <div class='hike-tile'>
+          <div class='hike-tile__left-side hike-tile__text'>
+            <a href={`./${hike.slug}.html`}>
+              <div class='hike-tile__text__name'>{hike.name}</div>
+              <div class='hike-tile__text__area'>({hike.area} Area)</div>
+            </a>
+          </div>
+          <div class='hike-tile__right-side'>
+            <TrailSummary {...hike} />
+          </div>
+        </div>
+      )) }
+    </div>
   </App>
 );
