@@ -6,7 +6,7 @@ import { MapMarker } from './MapMarker';
 import { TrailSummary } from './TrailSummary';
 import * as coquitlam from './coquitlam.json';
 
-export const IndexApp = ({ hikes }) => (
+export const MainPage = ({ hikes }) => (
   <App title='Coquitlam Family Hikes'>
     <nav><h1>Coquitlam Family Hikes</h1></nav>
     <Map longitude={coquitlam.longitude} latitude={coquitlam.latitude} zoom={coquitlam.zoom} >

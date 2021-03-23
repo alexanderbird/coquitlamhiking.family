@@ -5,7 +5,7 @@ import { Map } from './Map';
 import { MapMarker } from './MapMarker';
 import { TrailSummary } from './TrailSummary';
 
-export const HikeApp: FunctionComponent<{ hike: any }> = ({ hike }) => (
+export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
   <App title={`${hike.name} | Coquitlam Family Hikes`}>
     <nav><h1><a href="/">Coquitlam Family Hikes</a></h1> &gt; <h2>{hike.name}</h2></nav>
     <div>{hike.area} Area</div>

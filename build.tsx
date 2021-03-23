@@ -3,8 +3,8 @@ import * as path from 'path';
 import { h } from 'preact';
 import * as dotenv from 'dotenv'; dotenv.config();
 
-import { IndexApp } from './src/index.app';
-import { HikeApp } from './src/hike.app';
+import { MainPage } from './src/MainPage';
+import { HikePage } from './src/HikePage';
 import { loadData } from './src/loadData';
 
 import { render } from 'preact-render-to-string';
@@ -14,10 +14,10 @@ if (!hikes) {
   process.exit(1);
 }
 
-fs.writeFileSync('./build/index.html', render(<IndexApp hikes={hikes} />));
+fs.writeFileSync('./build/index.html', render(<MainPage hikes={hikes} />));
 
 hikes.forEach(hike => {
-  const html = render(<HikeApp hike={hike} />);
+  const html = render(<HikePage hike={hike} />);
   fs.writeFileSync(`./build/${hike.slug}.html`, html);
 });
 
