@@ -72,12 +72,12 @@
   hilly: no
   notes: ""
   images:
-    - 001@5x4
-    - 002@5x4
-    - 003@5x4
-    - 004@5x4
-    - 005@3x4
-    - 006@5x4
+    - 001@4x3
+    - 002@4x3
+    - 003@4x3
+    - 004@4x3
+    - 005@3x3
+    - 006@4x3
 
 - name: Deboville Slough (North Trail)
   slug: deboville-slough
