@@ -128,7 +128,8 @@ nav {
   grid-column-end: span var(--width);
   grid-row-end: span var(--height);
   width: 100%;
-  height: auto;
+  height: 100%;
+  overflow: hidden;
   border-radius: var(--roundness);
 }
 

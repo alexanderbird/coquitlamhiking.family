@@ -33,7 +33,7 @@ export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
         return (
           <img
             style={`--width: ${width}; --height: ${height};`}
-            src={`https://images.hiker.family/${hike.slug}/${name}.jpg?nf_resize=fit&w=${width * 200}&h=${height * 200}`}
+            src={`https://images.hiker.family/${hike.slug}/${name}.jpg?nf_resize=smartcrop&w=${width * 200}&h=${height * 200}`}
             />
         );
       }) }
