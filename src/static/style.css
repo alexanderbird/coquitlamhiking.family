@@ -114,6 +114,23 @@ nav {
   font-size: 0.9em;
 }
 
+.image-gallery {
+  margin-top; 0;
+  margin: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-auto-columns: 1fr;
+  grid-gap: 10px;
+}
+
+.image-gallery img {
+  grid-column-end: span var(--width);
+  grid-row-end: span var(--height);
+  width: 100%;
+  height: auto;
+  border-radius: var(--roundness);
+}
+
 /* Components */
 
 .trail-summary {

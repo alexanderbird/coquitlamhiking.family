@@ -24,5 +24,19 @@ export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
         <br/><a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>Open in Google Maps</a>
       </MapMarker>
     </Map>
+    <div class='image-gallery'>
+      { hike.images && hike.images.map(image => {
+        const [_, name, _width, _height] = image.match(/([0-9]+)@(\d+)x(\d+)/)
+        const width = Number(_width);
+        const height = Number(_height);
+
+        return (
+          <img
+            style={`--width: ${width}; --height: ${height};`}
+            src={`https://images.hiker.family/${hike.slug}/${name}.jpg?nf_resize=fit&w=${width * 200}&h=${height * 200}`}
+            />
+        );
+      }) }
+    </div>
   </App>
 );

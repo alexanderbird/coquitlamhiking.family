@@ -13,6 +13,9 @@
   notes: |
     Forested walk, some stairs. You finish at a gravel beach that looks out at
     Jug Island
+  images:
+    - 001@4x3
+    - 002@12x3
 
 - name: Admiralty Point
   slug: admiralty-point
@@ -30,6 +33,8 @@
     Lots of views along the way, you can stop at Cod Rock if you want to give up
     early. There's a small rocky beach (Maple Beach) near Admiralty Point which
     is great for throwing rocks into the water.
+  images:
+    - 001@4x3
 
 - name: Buntzen Ridge + Sugar Mountain Trail
   slug: buntzen-ridge-west
@@ -66,6 +71,13 @@
     text: River Valley & Mountains
   hilly: no
   notes: ""
+  images:
+    - 001@4x3
+    - 002@4x3
+    - 003@4x3
+    - 004@4x3
+    - 005@3x4
+    - 006@4x3
 
 - name: Deboville Slough (North Trail)
   slug: deboville-slough
@@ -80,6 +92,11 @@
     text: River Valley & Mountains
   hilly: no
   notes: ""
+  images:
+    - 001@3x4
+    - 002@4x3
+    - 003@4x3
+    - 004@4x3
 
 - name: Minnekhada
   slug: minnekhada
@@ -94,6 +111,11 @@
     type: wetland
     text: Wetland
   notes: ""
+  images:
+    - 001@3x4
+    - 002@4x3
+    - 003@10x3
+    - 004@3x4
 
 - name: Pinecone Burke Provincial Park
   slug: pinecone-burke
@@ -108,6 +130,12 @@
     type: forest
     text: Forest
   notes: ""
+  images:
+    - 001@4x3
+    - 002@4x3
+    - 003@4x3
+    - 004@4x3
+    - 005@4x3
 
 - name: Harper Park
   slug: harper-park
@@ -212,3 +240,6 @@
     text: River
   notes: |
     A discrete little trail along Coquitlam River. Park at the end of the road.
+  images:
+    - 001@4x3
+    - 002@12x4
