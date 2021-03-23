@@ -156,6 +156,17 @@ nav {
   padding-right: 10px;
 }
 
+.trailhead-map-marker-detail {
+  background-image: var(--background);
+  height: 300px;
+  border-radius: var(--roundness);
+}
+.trailhead-map-marker-detail__text {
+  background-color: #FFF9;
+  padding: 10px;
+  padding-top: 0;
+}
+
 .summary-icon {
   font-family: 'National Park';
   text-align: center;
