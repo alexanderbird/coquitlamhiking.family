@@ -1,6 +1,6 @@
 import { h } from 'preact';
 
-export const App = ({ children, title }) => (
+export const App = ({ children, title, className }) => (
   <html>
     <head>
       <meta charSet='UTF-8'/>
@@ -11,7 +11,7 @@ export const App = ({ children, title }) => (
       <link rel='stylesheet' href='./style.css'/>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
     </head>
-    <body>
+    <body className={className}>
       { children }
 
       <script src={`https://maps.googleapis.com/maps/api/js?key=${process.env.GOOGLE_MAPS_API_KEY}&callback=initMap&libraries=&v=weekly`} async ></script>

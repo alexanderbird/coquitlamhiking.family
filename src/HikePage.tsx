@@ -5,10 +5,16 @@ import { Map } from './Map';
 import { MapMarker } from './MapMarker';
 import { TrailSummary } from './TrailSummary';
 import { parseImage } from './parseImage';
+import { Map as MapIcon } from './icons/Map';
+import { List as ListIcon } from './icons/List';
 
 export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
-  <App title={`${hike.name} | Coquitlam Family Hikes`}>
-    <nav><h1><a href="/">Coquitlam Family Hikes</a></h1> &gt; <h2>{hike.name}</h2></nav>
+  <App title={`${hike.name} | Coquitlam Family Hikes`} className='hike-page'>
+    <nav>
+      <h2>{hike.name}</h2>
+      <a class='map-link' href='/#map-tab'><MapIcon /></a>
+      <a class='list-link' href='/#list-tab'><ListIcon /></a>
+    </nav>
     <div class='hike-topmatter'>
       <h4>{hike.area} Area</h4>
       <TrailSummary {...hike} />
@@ -18,14 +24,16 @@ export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
         </>
       )}
     </div>
-    <Map latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} zoom={14}>
-      <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title='Trailhead' >
-        Trailhead:
-        <br/><b>{hike.trailhead.name}</b>
-        <br/><a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>Open in Google Maps</a>
-      </MapMarker>
-    </Map>
-    <div class='image-gallery'>
+    <div class='image-gallery'
+      style={`--map-grid-width: ${hike.map && hike.map.width}; --map-grid-height: ${hike.map && hike.map.height};`}
+      >
+      <Map latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} zoom={14}>
+        <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title='Trailhead' >
+          Trailhead:
+          <br/><b>{hike.trailhead.name}</b>
+          <br/><a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>Open in Google Maps</a>
+        </MapMarker>
+      </Map>
       { hike.images && hike.images.map(parseImage).map(({ name, width, height }) => (
         <img
           style={`--width: ${width}; --height: ${height};`}

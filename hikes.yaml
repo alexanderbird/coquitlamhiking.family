@@ -16,6 +16,7 @@
   images:
     - 001@4x3
     - 002@12x3
+  map: { width: 8, height: 3 }
 
 - name: Admiralty Point
   slug: admiralty-point
@@ -35,6 +36,7 @@
     is great for throwing rocks into the water.
   images:
     - 001@4x3
+  map: { width: 8, height: 3 }
 
 - name: Buntzen Ridge + Sugar Mountain Trail
   slug: buntzen-ridge-west
@@ -56,6 +58,7 @@
     At some times of the year there are lots of little springs crossing the trail (under little bridges).
 
     Very fun even if you only go a little ways up.
+  map: { width: 12, height: 3 }
 
 
 - name: Along the Pitt River
@@ -83,8 +86,9 @@
     - 002@4x3
     - 003@4x3
     - 004@4x3
-    - 005@3x3
-    - 006@4x3
+    - 005@5x5
+    - 006@7x5
+  map: { width: 4, height: 6 }
 
 - name: Deboville Slough - North Side
   slug: deboville-slough
@@ -110,6 +114,7 @@
     - 002@4x3
     - 003@4x3
     - 001@3x4
+  map: { width: 9, height: 4 }
 
 - name: Minnekhada
   slug: minnekhada
@@ -125,10 +130,11 @@
     text: Wetland
   notes: ""
   images:
-    - 002@5x4
-    - 001@3x4
     - 003@12x4
-    - 004@3x4
+    - 002@5x4
+    - 001@6x8
+    - 004@6x8
+  map: { width: 7, height: 4 }
 
 - name: Pinecone Burke Provincial Park
   slug: pinecone-burke
@@ -144,11 +150,12 @@
     text: Forest
   notes: ""
   images:
-    - 001@5x4
-    - 002@5x4
-    - 003@5x4
-    - 004@5x4
-    - 005@5x4
+    - 002@4x3
+    - 005@4x4
+    - 003@4x2
+    - 004@4x4
+    - 001@4x3
+  map: { width: 4, height: 8 }
 
 - name: Harper Park
   slug: harper-park
@@ -163,6 +170,7 @@
     type: river
     text: Forest & Creek
   notes: ""
+  map: { width: 12, height: 1 }
 
 - name: Coquitlam River Pathway
   slug: coquitlam-river-pathway
@@ -177,6 +185,7 @@
     type: river
     text: River
   notes: ""
+  map: { width: 12, height: 1 }
 
 - name: Cascade Falls
   slug: cascade-falls
@@ -193,6 +202,7 @@
   links:
     - https://www.vancouvertrails.com/trails/cascade-falls/
   notes: ""
+  map: { width: 12, height: 1 }
 
 - name: Como Lake
   slug: como-lake
@@ -207,6 +217,7 @@
     type: ocean
     text: Lake
   notes: ""
+  map: { width: 12, height: 1 }
 
 - name: Mundy Park
   slug: mundy-park
@@ -225,6 +236,7 @@
   images:
     - 001@4x3
     - 002@4x3
+  map: { width: 4, height: 3 }
 
 - name: Colony Farm Regional Park
   slug: colony-farm
@@ -241,6 +253,7 @@
   notes: |
     big, wide trails that are great for social walks where everyone's pushing a
     stroller
+  map: { width: 12, height: 1 }
 
 - name: Galette Ave Coquitlam River Trail
   slug: galette-ave-coquitlam-river
@@ -259,3 +272,4 @@
   images:
     - 001@5x4
     - 002@12x4
+  map: { width: 7, height: 4 }

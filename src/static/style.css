@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   --roundness: 10px;
+  --header-height: 4em;
 }
 
 /* Theme */
@@ -43,21 +44,62 @@ nav > * {
 
 nav {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   border-radius: var(--roundness);
   background-color: #0003;
   margin: 10px;
+  height: calc(var(--header-height) - 20px);
+  padding-left: 1em;
+  padding-right: 1em;
 }
 
-#map {
-  height: calc(100vh - 20px);
+nav svg {
+  width: 2em;
+  height: auto;
+}
+
+/* Main Page */
+
+#map-tab,
+#list-tab {
+  position: fixed;
+  top: 0;
+}
+#map-tab:target ~ nav .map-link,
+#map-tab:not(:target) ~ #list-tab:not(:target) ~ nav .map-link {
+  background-color: var(--background-color);
+}
+#list-tab:target ~ nav .list-link {
+  background-color: var(--background-color);
+}
+#map-tab:target ~ .hike-tiles,
+#map-tab:not(:target) ~ #list-tab:not(:target) ~ .hike-tiles {
+  display: none;
+}
+#list-tab:target ~ #map {
+  display: none;
+}
+.map-link,
+.list-link {
+  justify-self: flex-end;
+  padding: 5px;
+  --background-color: #FFF6;
+  border-radius: var(--roundness);
+}
+
+.map-link {
+  margin-left: auto;
+}
+
+.main-page #map {
+  height: calc(100vh - 10px - var(--header-height));
   width: calc(100vw - 20px);
   margin: 10px;
   border-radius: var(--roundness);
 }
-
-.hike-tiles {
+.main-page .hike-tiles {
   margin: 10px;
   margin-top: 0;
   display: grid;
@@ -66,20 +108,20 @@ nav {
 }
 
 @media (max-width: 500px) {
-  .hike-tiles { 
+  .main-page .hike-tiles { 
     grid-template-columns: 1fr;
   }
 }
 
-.hike-tile {
+.main-page .hike-tile {
   display: flex;
   border-radius: var(--roundness);
   background-color: #0003;
 }
-.hike-tile:hover {
+.main-page .hike-tile:hover {
   background-color: #0006;
 }
-.hike-tile__left-side {
+.main-page .hike-tile__left-side {
   flex: 1;
   flex-grow: 1;
   background-color: #FFF1;
@@ -87,33 +129,55 @@ nav {
   border-top-left-radius: var(--roundness);
   border-bottom-left-radius: var(--roundness);
 }
-.hike-tile__right-side {
+.main-page .hike-tile__right-side {
   flex: 1;
   flex-grow: 1;
   padding: 10px;
 }
-.hike-tile__text {
+.main-page .hike-tile__text {
   position: relative;
   font-family: 'National Park';
 }
-.hike-tile__text a {
+.main-page .hike-tile__text a {
   display: block;
   height: 100%;
   width: 100%;
 }
-.hike-tile__text a:hover {
+.main-page .hike-tile__text a:hover {
   color: #FCFCFFCC;
 }
-.hike-tile__text__name {
+.main-page .hike-tile__text__name {
   font-weight: bold;
 }
-.hike-tile__text__area {
+.main-page .hike-tile__text__area {
   font-size: 0.9em;
 }
 
-.image-gallery {
+.main-page .trailhead-map-marker-detail {
+  background-image: var(--background);
+  height: 300px;
+  border-radius: var(--roundness);
+}
+.main-page .trailhead-map-marker-detail__text {
+  background-color: #FFF9;
+  padding: 10px;
+  padding-top: 0;
+}
+
+/* Hike Page */
+
+.hike-page #map {
+  height: 100%;
+  width: 100%;
+  border-radius: var(--roundness);
+  --width: var(--map-grid-width);
+  --height: var(--map-grid-height);
+}
+
+.hike-page .image-gallery {
   margin-top; 0;
   margin: 10px;
+  min-height: 60vh;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-auto-columns: 1fr;
@@ -121,7 +185,7 @@ nav {
   grid-auto-flow: dense;
 }
 
-.image-gallery img {
+.hike-page .image-gallery > * {
   grid-column-end: span var(--width);
   grid-row-end: span var(--height);
   width: 100%;
@@ -135,12 +199,19 @@ nav {
 @media not all and (min-resolution:.001dpcm) { @media {
   /* Safari has a problematic (but technically correct) implementation of img height */
   /* Explanation: https://stackoverflow.com/a/44773109/3012550 */
-  .image-gallery img {
+  .hike-page .image-gallery > * {
     height: unset;
   }
 }}
 
-/* Components */
+.hike-page .hike-topmatter {
+  border-radius: var(--roundness);
+  margin: 10px;
+  padding: 10px;
+  background-color: #FFF2;
+}
+
+/* Shared Components */
 
 .trail-summary {
   display: flex;
@@ -152,17 +223,6 @@ nav {
 .trail-summary > * {
   margin: auto;
   padding-right: 10px;
-}
-
-.trailhead-map-marker-detail {
-  background-image: var(--background);
-  height: 300px;
-  border-radius: var(--roundness);
-}
-.trailhead-map-marker-detail__text {
-  background-color: #FFF9;
-  padding: 10px;
-  padding-top: 0;
 }
 
 .summary-icon {
@@ -179,9 +239,3 @@ nav {
   height: 50px;
 }
 
-.hike-topmatter {
-  border-radius: var(--roundness);
-  margin: 10px;
-  padding: 10px;
-  background-color: #FFF2;
-}

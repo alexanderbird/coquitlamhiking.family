@@ -6,6 +6,8 @@ import { MapMarker } from './MapMarker';
 import { TrailSummary } from './TrailSummary';
 import * as coquitlam from './coquitlam.json';
 import { parseImage } from './parseImage';
+import { Map as MapIcon } from './icons/Map';
+import { List as ListIcon } from './icons/List';
 
 const previewImageCSS = hike => {
   if (!hike.images || !hike.images.length) return '';
@@ -14,8 +16,14 @@ const previewImageCSS = hike => {
 }
 
 export const MainPage = ({ hikes }) => (
-  <App title='Coquitlam Family Hikes'>
-    <nav><h1>Coquitlam Family Hikes</h1></nav>
+  <App title='Coquitlam Family Hikes' className='main-page'>
+    <div id='map-tab'/>
+    <div id='list-tab'/>
+    <nav>
+      <h1>Coquitlam Family Hikes</h1>
+      <a class='map-link' href='/#map-tab'><MapIcon /></a>
+      <a class='list-link' href='/#list-tab'><ListIcon /></a>
+    </nav>
     <Map longitude={coquitlam.longitude} latitude={coquitlam.latitude} zoom={coquitlam.zoom} >
       { hikes.map(hike => (
         <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title={hike.name} >
@@ -31,7 +39,7 @@ export const MainPage = ({ hikes }) => (
         </MapMarker>
       )) }
     </Map>
-    <div class='hike-tiles'>
+    <section class='hike-tiles'>
       { hikes.sort((lhs, rhs) => lhs.area > rhs.area ? 1 : -1).map(hike => (
         <div class='hike-tile'>
           <div class='hike-tile__left-side hike-tile__text'>
@@ -45,6 +53,6 @@ export const MainPage = ({ hikes }) => (
           </div>
         </div>
       )) }
-    </div>
+    </section>
   </App>
 );
