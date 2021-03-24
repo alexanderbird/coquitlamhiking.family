@@ -70,7 +70,14 @@
     type: mountain
     text: River Valley & Mountains
   hilly: no
-  notes: ""
+  notes: |
+    This is a popular trail, probably because you get stunning views as soon as
+    you start the walk. The path is a wide, flat, gravel path.
+
+    The path meets with the path that goes along the south side of the Deboville
+    Slough, so if you want a really really long walk you could start here, walk
+    to the start of the Deboville Slough north trail, and then walk along there. 
+
   images:
     - 001@4x3
     - 002@4x3
@@ -91,7 +98,13 @@
     type: mountain
     text: River Valley & Mountains
   hilly: no
-  notes: ""
+  notes: |
+    Nicer views than the path along the Pitt River, but you have to walk further
+    before you get to them. Nice wide, flat, gravel paths. Beautiful. 
+
+    At the end of the trail (after it turns towards Minnekhada park), there is a
+    fork to the right that leads to a birding observation deck. 
+
   images:
     - 001@4x3
     - 002@4x3
