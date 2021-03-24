@@ -86,7 +86,7 @@
     - 005@3x3
     - 006@4x3
 
-- name: Deboville Slough (North Trail)
+- name: Deboville Slough - North Side
   slug: deboville-slough
   area: Pitt River
   trailhead:
@@ -106,10 +106,10 @@
     fork to the right that leads to a birding observation deck. 
 
   images:
-    - 001@4x3
+    - 004@4x3
     - 002@4x3
     - 003@4x3
-    - 004@3x4
+    - 001@3x4
 
 - name: Minnekhada
   slug: minnekhada
