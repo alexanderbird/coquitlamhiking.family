@@ -2,7 +2,6 @@ body {
   background-color: #9A9FA8;
   padding: 0;
   margin: 0;
-  scroll-snap-type: y proximity;
   --roundness: 10px;
 }
 
@@ -56,7 +55,6 @@ nav {
   width: calc(100vw - 20px);
   margin: 10px;
   border-radius: var(--roundness);
-  scroll-snap-align: start;
 }
 
 .hike-tiles {
