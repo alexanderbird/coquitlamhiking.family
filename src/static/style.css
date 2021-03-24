@@ -132,6 +132,16 @@ nav {
   border-radius: var(--roundness);
 }
 
+/* Source for hack: https://stackoverflow.com/a/25975282/3012550
+ * @media (browser: safari) {  */
+@media not all and (min-resolution:.001dpcm) { @media {
+  /* Safari has a problematic (but technically correct) implementation of img height */
+  /* Explanation: https://stackoverflow.com/a/44773109/3012550 */
+  .image-gallery img {
+    height: unset;
+  }
+}}
+
 /* Components */
 
 .trail-summary {
@@ -177,18 +187,3 @@ nav {
   padding: 10px;
   background-color: #FFF2;
 }
-
-/* Safari-specific tweaks
- * Source for hack: https://stackoverflow.com/a/25975282/3012550 */
-@media not all and (min-resolution:.001dpcm) { @media {
-  /* Safari has a problematic (but technically correct) implementation of img height */
-  /* Explanation: https://stackoverflow.com/a/44773109/3012550 */
-  .image-gallery img {
-    height: unset;
-  }
-  .trailhead-map-marker-detail {
-    margin-right: 10px;
-    margin-bottom: 10px;
-  }
-}}
-
