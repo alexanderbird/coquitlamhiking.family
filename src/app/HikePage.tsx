@@ -19,7 +19,7 @@ function hikeDescription(hike) {
 }
 
 const MetaTags: FunctionComponent<{ hike: any }> = ({ hike }) => {
-  const title = '🥾 ' + hike.name;
+  const title = `${hike.name} | Coquitlam Family Hikes`;
   const description = hikeDescription(hike);
   const url = `https://hiker.family/${hike.slug}.html`;
   const image = hike.images && hike.images.length && `https://images.hiker.family/${hike.slug}/${parseImage(hike.images[0]).name}.jpg?nf_resize=smartcrop&w=800&h=800`;
