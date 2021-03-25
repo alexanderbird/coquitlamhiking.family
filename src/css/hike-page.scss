@@ -1,0 +1,39 @@
+.hike-page {
+  #map {
+    height: 100%;
+    width: 100%;
+    border-radius: var(--roundness);
+    --width: var(--map-grid-width);
+    --height: var(--map-grid-height);
+  }
+
+  .image-gallery {
+    margin-top: 0;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-columns: 1fr;
+    grid-gap: 10px;
+    grid-auto-flow: dense;
+  }
+
+  .image-gallery--only-map {
+    min-height: 60vh;
+  }
+
+  .image-gallery > * {
+    grid-column-end: span var(--width);
+    grid-row-end: span var(--height);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: var(--roundness);
+  }
+
+  .hike-topmatter {
+    border-radius: var(--roundness);
+    margin: 10px;
+    padding: 10px;
+    background-color: #FFF2;
+  }
+}

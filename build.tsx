@@ -32,7 +32,7 @@ fs.readdirSync('./src/static')
   });
 
 
-exec('sass src/css/*.scss build/style.css', (error, stdout, stderr) => {
+exec('cat src/css/*.scss | sass --stdin build/style.css', (error, stdout, stderr) => {
   if(error) console.error(error);
   if(stderr) console.error(stderr);
   if(stdout) console.log(stdout);
