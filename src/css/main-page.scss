@@ -1,10 +1,40 @@
 .main-page {
-  #map {
-    height: calc(100vh - 10px - var(--header-height));
+  /* Map Tab */
+  #map-tab:target ~ .main ,
+  #map-tab:not(:target) ~ #list-tab:not(:target) ~ .main {
+    position: fixed;
+    height: calc(var(--vh, 1vh) * 100);
     width: calc(100vw - 20px);
-    margin: 10px;
-    border-radius: var(--roundness);
+    top: 0;
+    left: 0;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    nav {
+      flex: 1;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .hike-tiles  {
+      display: none;
+    }
+
+    #map {
+      height: calc((var(--vh, 1vh) * 100) - 10px - var(--header-height));
+      width: 100%;
+      border-radius: var(--roundness);
+      margin-bottom: 10px;
+    }
   }
+
+  /* List Tab */
+  #list-tab:target ~ .main {
+    #map {
+      display: none;
+    }
+  }
+
   .hike-tiles {
     margin: 10px;
     margin-top: 0;

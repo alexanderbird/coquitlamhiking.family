@@ -8,6 +8,7 @@ export const App = ({ children, title, className }) => (
       <title>{ title }</title>
       <script src='./maps.js'></script>
       <script src='./mapStyle.js'></script>
+      <script src='./detectViewportHeight.js'></script>
       <link rel='stylesheet' href='./style.css'/>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
     </head>

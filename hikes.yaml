@@ -14,9 +14,9 @@
     Forested walk, some stairs. You finish at a gravel beach that looks out at
     Jug Island
   images:
-    - 001@4x3
+    - 001@4x4
     - 002@12x3
-  map: { width: 8, height: 3 }
+  map: { width: 8, height: 4 }
 
 - name: Admiralty Point
   slug: admiralty-point
@@ -35,8 +35,8 @@
     early. There's a small rocky beach (Maple Beach) near Admiralty Point which
     is great for throwing rocks into the water.
   images:
-    - 001@4x3
-  map: { width: 8, height: 3 }
+    - 001@4x5
+  map: { width: 8, height: 5 }
 
 - name: Buntzen Ridge + Sugar Mountain Trail
   slug: buntzen-ridge-west

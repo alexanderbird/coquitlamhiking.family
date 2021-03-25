@@ -51,8 +51,15 @@ nav {
   background-color: #0003;
   margin: 10px;
   height: calc(var(--header-height) - 20px);
-  padding-left: 1em;
-  padding-right: 1em;
+}
+
+nav h1,
+nav h2 {
+  margin-left: 1em;
+  margin-right: 1em;
+  @media (max-width: 500px) {
+    font-size: 1em;
+  }
 }
 
 nav svg {
@@ -67,19 +74,12 @@ nav svg {
   position: fixed;
   top: 0;
 }
-#map-tab:target ~ nav .map-link,
-#map-tab:not(:target) ~ #list-tab:not(:target) ~ nav .map-link {
+#map-tab:target ~ .main nav .map-link,
+#map-tab:not(:target) ~ #list-tab:not(:target) ~ .main nav .map-link {
   background-color: var(--background-color);
 }
-#list-tab:target ~ nav .list-link {
+#list-tab:target ~ .main nav .list-link {
   background-color: var(--background-color);
-}
-#map-tab:target ~ .hike-tiles,
-#map-tab:not(:target) ~ #list-tab:not(:target) ~ .hike-tiles {
-  display: none;
-}
-#list-tab:target ~ #map {
-  display: none;
 }
 .map-link,
 .list-link {
@@ -87,6 +87,7 @@ nav svg {
   padding: 5px;
   --background-color: #FFF6;
   border-radius: var(--roundness);
+  margin: 1px;
 }
 
 .map-link {
