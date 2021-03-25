@@ -23,6 +23,9 @@ export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
           <div dangerouslySetInnerHTML={{__html: hike.notes.replace(/\n\n/g, '<br/>')}} />
         </>
       )}
+      <p class='hike-topmatter__trailhead-link'>
+        <a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>Show Trailhead in Google Maps</a>
+      </p>
     </div>
     <div class='image-gallery'
       style={`--map-grid-width: ${hike.map && hike.map.width}; --map-grid-height: ${hike.map && hike.map.height};`}
