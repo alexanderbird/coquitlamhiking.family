@@ -24,7 +24,7 @@ export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
         </>
       )}
     </div>
-    <div class='image-gallery'
+    <div class={`image-gallery ${hike.images && hike.images.length ? '' : 'image-gallery--only-map'}`}
       style={`--map-grid-width: ${hike.map && hike.map.width}; --map-grid-height: ${hike.map && hike.map.height};`}
       >
       <Map latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} zoom={14}>
