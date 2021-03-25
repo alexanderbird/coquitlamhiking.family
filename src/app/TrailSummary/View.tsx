@@ -23,5 +23,6 @@ function getIconFor(type) {
 
 export const View = ({ type, text }) => {
   const IconComponent = getIconFor(type);
-  return <SummaryIcon IconComponent={IconComponent} label={text + ' View'} />;
+  const label = text + ' ' + (text.match(/&/) ? 'Views' : 'View');
+  return <SummaryIcon IconComponent={IconComponent} label={label} />;
 };
