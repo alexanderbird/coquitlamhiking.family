@@ -8,8 +8,46 @@ import { parseImage } from './parseImage';
 import { Map as MapIcon } from './icons/Map';
 import { List as ListIcon } from './icons/List';
 
+function hikeDescription(hike) {
+  let result = '';
+  result += 'A ' + hike.view.text.toLowerCase() + ' view hike that is ';
+  if (hike.hilly !== 'no') {
+    result += hike.hilly === 'yes' ? 'very hilly' : 'somewhat hilly';
+    result += hike.stroller === 'yes' ? ' yet stroller accessible' : ' and not stroller accessible';
+  } else {
+    result += 'flat';
+    result += hike.stroller === 'yes' ? ' and stroller accessible' : ' but not stroller accessible';
+  }
+  result += '.';
+  return result;
+}
+
+const MetaTags: FunctionComponent<{ hike: any }> = ({ hike }) => {
+  const title = '🥾 ' + hike.name;
+  const description = hikeDescription(hike);
+  const url = `https://hiker.family/${hike.slug}.html`;
+  const image = hike.images && hike.images.length && `https://images.hiker.family/${hike.slug}/${hike.images[0]}.jpg?nf_resize=smartcrop&w=800&h=800`;
+  return (<Fragment>
+    <meta name="description" content={description} />
+
+    {/* Open Graph / Facebook */}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url}/>
+    <meta property="og:title" content={title}/>
+    <meta property="og:description" content={description}/>
+    { image && <meta property="og:image" content={image}/> }
+
+    {/* Twitter */}
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:url" content={url}/>
+    <meta property="twitter:title" content={title}/>
+    <meta property="twitter:description" content={description}/>
+    { image && <meta property="twitter:image" content={image}/> }
+  </Fragment>);
+}
+
 export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
-  <App title={`${hike.name} | Coquitlam Family Hikes`} className='hike-page'>
+  <App title={`${hike.name} | Coquitlam Family Hikes`} className='hike-page' MetaTagsComponent={() => <MetaTags hike={hike} />}>
     <nav>
       <h2>{hike.name}</h2>
       <a class='map-link' href='/#map-tab'><MapIcon /></a>

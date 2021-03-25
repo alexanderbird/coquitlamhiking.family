@@ -1,4 +1,4 @@
-import { h } from 'preact';
+import { h, Fragment } from 'preact';
 
 import { App } from './App';
 import { Map } from './Map';
@@ -14,8 +14,26 @@ const previewImageCSS = hike => {
   return `url(https://images.hiker.family/${hike.slug}/${name}.jpg?nf_resize=smartcrop&w=300&h=400)`;
 }
 
+const MetaTags = () => (<>
+  <meta name="description" content="A digital scrapbook of our favorite walks and hikes in the Coquitlam area." />
+
+  {/* Open Graph / Facebook */}
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hiker.family/"/>
+  <meta property="og:title" content="🥾 Coquitlam Family Hikes"/>
+  <meta property="og:description" content="A digital scrapbook of our favorite walks and hikes in the Coquitlam area."/>
+  <meta property="og:image" content="https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=800&h=800"/>
+
+  {/* Twitter */}
+  <meta property="twitter:card" content="summary_large_image"/>
+  <meta property="twitter:url" content="https://hiker.family/"/>
+  <meta property="twitter:title" content="🥾 Coquitlam Family Hikes"/>
+  <meta property="twitter:description" content="A digital scrapbook of our favorite walks and hikes in the Coquitlam area."/>
+  <meta property="twitter:image" content="https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=800&h=800"/>
+</>)
+
 export const MainPage = ({ hikes, mapCenter }) => (
-  <App title='Coquitlam Family Hikes' className='main-page'>
+  <App title='Coquitlam Family Hikes' className='main-page' MetaTagsComponent={MetaTags}>
     <div id='map-tab'/>
     <div id='list-tab'/>
     <div class='main'>

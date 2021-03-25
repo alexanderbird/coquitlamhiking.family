@@ -1,6 +1,6 @@
 import { h } from 'preact';
 
-export const App = ({ children, title, className }) => (
+export const App = ({ children, title, className, MetaTagsComponent }) => (
   <html>
     <head>
       <meta charSet='UTF-8'/>
@@ -11,6 +11,7 @@ export const App = ({ children, title, className }) => (
       <script src='./detectViewportHeight.js'></script>
       <link rel='stylesheet' href='./style.css'/>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
+      <MetaTagsComponent />
     </head>
     <body className={className}>
       { children }
