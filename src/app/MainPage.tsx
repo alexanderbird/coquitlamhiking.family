@@ -4,7 +4,6 @@ import { App } from './App';
 import { Map } from './Map';
 import { MapMarker } from './MapMarker';
 import { TrailSummary } from './TrailSummary';
-import * as coquitlam from './coquitlam.json';
 import { parseImage } from './parseImage';
 import { Map as MapIcon } from './icons/Map';
 import { List as ListIcon } from './icons/List';
@@ -15,7 +14,7 @@ const previewImageCSS = hike => {
   return `url(https://images.hiker.family/${hike.slug}/${name}.jpg?nf_resize=smartcrop&w=300&h=400)`;
 }
 
-export const MainPage = ({ hikes }) => (
+export const MainPage = ({ hikes, mapCenter }) => (
   <App title='Coquitlam Family Hikes' className='main-page'>
     <div id='map-tab'/>
     <div id='list-tab'/>
@@ -24,7 +23,7 @@ export const MainPage = ({ hikes }) => (
       <a class='map-link' href='/#map-tab'><MapIcon /></a>
       <a class='list-link' href='/#list-tab'><ListIcon /></a>
     </nav>
-    <Map longitude={coquitlam.longitude} latitude={coquitlam.latitude} zoom={coquitlam.zoom} >
+    <Map longitude={mapCenter.longitude} latitude={mapCenter.latitude} zoom={mapCenter.zoom} >
       { hikes.map(hike => (
         <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title={hike.name} >
           <div

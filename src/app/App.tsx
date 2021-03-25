@@ -9,6 +9,7 @@ export const App = ({ children, title, className }) => (
       <script src='./maps.js'></script>
       <script src='./mapStyle.js'></script>
       <link rel='stylesheet' href='./style.css'/>
+      <link rel='stylesheet' href='./safari.css'/>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
     </head>
     <body className={className}>

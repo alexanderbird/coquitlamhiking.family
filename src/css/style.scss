@@ -175,7 +175,7 @@ nav svg {
 }
 
 .hike-page .image-gallery {
-  margin-top; 0;
+  margin-top: 0;
   margin: 10px;
   min-height: 60vh;
   display: grid;
@@ -193,16 +193,6 @@ nav svg {
   overflow: hidden;
   border-radius: var(--roundness);
 }
-
-/* Source for hack: https://stackoverflow.com/a/25975282/3012550
- * @media (browser: safari) {  */
-@media not all and (min-resolution:.001dpcm) { @media {
-  /* Safari has a problematic (but technically correct) implementation of img height */
-  /* Explanation: https://stackoverflow.com/a/44773109/3012550 */
-  .hike-page .image-gallery > * {
-    height: unset;
-  }
-}}
 
 .hike-page .hike-topmatter {
   border-radius: var(--roundness);
