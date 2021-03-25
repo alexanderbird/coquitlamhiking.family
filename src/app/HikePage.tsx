@@ -26,7 +26,7 @@ const MetaTags: FunctionComponent<{ hike: any }> = ({ hike }) => {
   const title = '🥾 ' + hike.name;
   const description = hikeDescription(hike);
   const url = `https://hiker.family/${hike.slug}.html`;
-  const image = hike.images && hike.images.length && `https://images.hiker.family/${hike.slug}/${hike.images[0]}.jpg?nf_resize=smartcrop&w=800&h=800`;
+  const image = hike.images && hike.images.length && `https://images.hiker.family/${hike.slug}/${parseImage(hike.images[0]).name}.jpg?nf_resize=smartcrop&w=800&h=800`;
   return (<Fragment>
     <meta name="description" content={description} />
 
