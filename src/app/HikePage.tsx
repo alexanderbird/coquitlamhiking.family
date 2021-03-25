@@ -9,15 +9,11 @@ import { Map as MapIcon } from './icons/Map';
 import { List as ListIcon } from './icons/List';
 
 function hikeDescription(hike) {
-  let result = '';
-  result += 'A ' + hike.view.text.toLowerCase() + ' view hike that is ';
-  if (hike.hilly !== 'no') {
-    result += hike.hilly === 'yes' ? 'very hilly' : 'somewhat hilly';
-    result += hike.stroller === 'yes' ? ' yet stroller accessible' : ' and not stroller accessible';
-  } else {
-    result += 'flat';
-    result += hike.stroller === 'yes' ? ' and stroller accessible' : ' but not stroller accessible';
-  }
+  let result = 'From our digital scrapbook of our favorite hikes in the area: this one has ';
+  result += hike.view.text.toLowerCase() + ' views, is ';
+  result += hike.hilly === 'yes' ? 'very hilly' : hike.hilly === 'somewhat' ? 'somewhat hilly' : 'relatively flat';
+  result += ', and is '
+  result += hike.stroller === 'yes' ? 'stroller accessible' : 'not stroller accessible';
   result += '.';
   return result;
 }
