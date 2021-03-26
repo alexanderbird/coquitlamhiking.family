@@ -73,6 +73,7 @@ export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
       </Map>
       { hike.images && hike.images.map(parseImage).map(({ name, width, height }) => (
         <img
+          crossOrigin='anonymous'
           style={`--width: ${width}; --height: ${height};`}
           src={`https://images.hiker.family/${hike.slug}/${name}.jpg?nf_resize=smartcrop&w=${width * 200}&h=${height * 200}`}
           />
