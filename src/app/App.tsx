@@ -12,6 +12,7 @@ export const App = ({ children, title, className, MetaTagsComponent }) => (
       <script src='./detectViewportHeight.js'></script>
       <link rel='stylesheet' href='./style.css'/>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
+      <link rel='manifest' href='manifest.json' />
       <MetaTagsComponent />
     </head>
     <body className={className}>
