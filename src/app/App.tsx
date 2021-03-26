@@ -1,5 +1,8 @@
 import { h } from 'preact';
 
+const icon = (image, size) => 
+  `https://images.hiker.family/${image}.jpg?nf_resize=smartcrop&w=${size}&h=${size}`;
+
 export const App = ({ children, title, className, MetaTagsComponent }) => (
   <html>
     <head>
@@ -14,10 +17,10 @@ export const App = ({ children, title, className, MetaTagsComponent }) => (
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <link rel='manifest' href='manifest.json' />
       <link rel='apple-touch-icon' href='' />
-      <link rel="apple-touch-icon" href="https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=48&h=48" />
-      <link rel="apple-touch-icon" sizes="152x152" href="https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=152&h=152" />
-      <link rel="apple-touch-icon" sizes="180x180" href="https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=180&h=180" />
-      <link rel="apple-touch-icon" sizes="167x167" href="https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=167&h=167" />
+      <link rel="apple-touch-icon" href={icon('pinecone-burke/005', 48)}/>
+      <link rel="apple-touch-icon" sizes="152x152" href={icon('pinecone-burke/005', 152)}/>
+      <link rel="apple-touch-icon" sizes="180x180" href={icon('pinecone-burke/005', 180)}/>
+      <link rel="apple-touch-icon" sizes="167x167" href={icon('pinecone-burke/005', 167)}/>
       <MetaTagsComponent />
     </head>
     <body className={className}>
