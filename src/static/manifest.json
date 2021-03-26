@@ -1,0 +1,24 @@
+{
+  "short_name": "Hikes",
+  "name": "Coquitlam Family Hikes",
+  "icons": [
+    {
+      "src": "https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=192&h=192",
+      "type": "image/jpg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=512&h=512",
+      "type": "image/jpg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#9A9FA8",
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#7C7F85",
+  "shortcuts": [],
+  "description": "A digital scrapbook of our favorite walks and hikes in the Coquitlam area.",
+  "screenshots": []
+}

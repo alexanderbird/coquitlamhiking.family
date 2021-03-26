@@ -13,6 +13,7 @@ import { render } from 'preact-render-to-string';
 
 const hikes = loadData('./hikes.yaml');
 if (!hikes) {
+  console.error('Couldn\'t find hike data');
   process.exit(1);
 }
 
@@ -36,4 +37,11 @@ exec('cat src/css/*.scss | sass --stdin build/style.css', (error, stdout, stderr
   if(error) console.error(error);
   if(stderr) console.error(stderr);
   if(stdout) console.log(stdout);
+
+  exec(`workbox generateSW workbox-config.js`, (error, stdout, stderr) => {
+    if(error) console.error(error);
+    if(stderr) console.error(stderr);
+    if(stdout) console.log(stdout);
+  });
+
 });
