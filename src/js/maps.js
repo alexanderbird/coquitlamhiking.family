@@ -1,3 +1,4 @@
+import { mapStyles } from './mapStyles';
 /* initMap is a magic method name that the google maps API uses */
 function initMap() {
   const mapElement = document.getElementById('map');
@@ -48,3 +49,4 @@ function processZoom(zoomString) {
   }
   return zoom;
 }
+window.initMap = initMap;

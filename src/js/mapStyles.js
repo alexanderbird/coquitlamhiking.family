@@ -1,5 +1,5 @@
 // Generated with this wizard: https://mapstyle.withgoogle.com/
-const mapStyles = [
+export const mapStyles = [
   {
     "elementType": "geometry",
     "stylers": [
