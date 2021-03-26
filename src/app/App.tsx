@@ -13,6 +13,7 @@ export const App = ({ children, title, className, MetaTagsComponent }) => (
       <link rel='stylesheet' href='./style.css'/>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
       <link rel='manifest' href='manifest.json' />
+      <link rel='apple-touch-icon' href='/app-icon.svg' />
       <MetaTagsComponent />
     </head>
     <body className={className}>
