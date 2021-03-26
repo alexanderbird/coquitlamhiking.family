@@ -10,7 +10,7 @@ precacheAndRoute(self.__WB_MANIFEST);
 registerRoute(
   ({url}) => url.origin === 'https://images.hiker.family',
   new CacheFirst({
-    cacheName: 'images',
+    cacheName: 'images-v2',
     plugins: [
       new CacheableResponsePlugin({
         statuses: [0, 200]
