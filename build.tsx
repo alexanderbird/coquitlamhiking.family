@@ -28,7 +28,7 @@ fs.readdirSync('./src/static')
   .filter(file => !file.match(/^\./))
   .forEach(file => {
     const source = path.join('./src/static', file);
-    const destination = path.join('./build',file);
+    const destination = path.join('./build', file);
     fs.createReadStream(source).pipe(fs.createWriteStream(destination));
   });
 
