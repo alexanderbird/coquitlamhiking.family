@@ -185,7 +185,13 @@
     type: river
     text: River
   notes: ""
-  map: { width: 12, height: 4 }
+  images:
+    - 004@4x5
+    - 001@4x3
+    - 002@4x3
+    - 003@4x3
+
+  map: { width: 8, height: 5 }
 
 - name: Cascade Falls
   slug: cascade-falls
