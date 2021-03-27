@@ -8,7 +8,7 @@ component_name=$2
   exit 1
 }
 
-destination_tsx="src/icons/$component_name.tsx"
+destination_tsx="src/app/icons/$component_name.tsx"
 
 cp "$source_svg" "$destination_tsx"
 npx --no-install svgo -i "$destination_tsx"
