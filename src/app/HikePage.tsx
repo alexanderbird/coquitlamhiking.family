@@ -6,6 +6,7 @@ import { MapMarker } from './MapMarker';
 import { TrailSummary } from './TrailSummary';
 import { parseImage } from './parseImage';
 import { Map as MapIcon } from './icons/Map';
+import { MapPin } from './icons/MapPin';
 import { List as ListIcon } from './icons/List';
 import { Share as ShareIcon } from './icons/Share';
 
@@ -60,9 +61,13 @@ export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
       )}
       <p class='hike-topmatter__links'>
         <a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>
-          Show Trailhead in Google Maps <MapIcon />
+          <MapPin />
+          Show Trailhead in Google Maps
         </a>
-        <button class='unbutton share-action share-action--not-supported'>Share Hike <ShareIcon /></button>
+        <button class='unbutton share-action share-action--not-supported'>
+          <ShareIcon />
+          Share Hike
+        </button>
       </p>
     </div>
     <div class='image-gallery'
