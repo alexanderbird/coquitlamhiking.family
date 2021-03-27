@@ -32,10 +32,18 @@
     padding: 10px;
     background-color: #FFF2;
 
-    &__trailhead-link {
+    &__links {
       margin-top: 30px;
       font-family: 'National Park';
       text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      svg {
+        width: 1em;
+        height: 1em;
+      }
     }
   }
 }

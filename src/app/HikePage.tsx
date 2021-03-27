@@ -7,6 +7,7 @@ import { TrailSummary } from './TrailSummary';
 import { parseImage } from './parseImage';
 import { Map as MapIcon } from './icons/Map';
 import { List as ListIcon } from './icons/List';
+import { Share as ShareIcon } from './icons/Share';
 
 function hikeDescription(hike) {
   let result = 'From our digital scrapbook of our favorite hikes in the area: this one has ';
@@ -57,8 +58,11 @@ export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
           <div dangerouslySetInnerHTML={{__html: hike.notes.replace(/\n\n/g, '<br/>')}} />
         </>
       )}
-      <p class='hike-topmatter__trailhead-link'>
-        <a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>Show Trailhead in Google Maps</a>
+      <p class='hike-topmatter__links'>
+        <a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>
+          Show Trailhead in Google Maps <MapIcon />
+        </a>
+        <button class='unbutton share-action share-action--not-supported'>Share Hike <ShareIcon /></button>
       </p>
     </div>
     <div class='image-gallery'
