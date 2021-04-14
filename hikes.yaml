@@ -172,12 +172,12 @@
     text: Forest & Creek
   notes: ""
   images:
-   - 001@4x3
-   - 003@2x3
+   - 001@4x4
+   - 003@2x4
    - 005@8x8
    - 004@4x4
    - 002@4x4
-  map: { width: 6, height: 3 }
+  map: { width: 6, height: 4 }
 
 - name: Coquitlam River Pathway
   slug: coquitlam-river-pathway
