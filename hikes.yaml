@@ -110,10 +110,11 @@
     fork to the right that leads to a birding observation deck. 
 
   images:
-    - 004@4x3
-    - 002@4x3
-    - 003@4x3
+    - 004@8x6
+    - 002@6x4
+    - 003@6x4
     - 001@3x4
+    - 005@4x6
   map: { width: 9, height: 4 }
 
 - name: Minnekhada
@@ -170,7 +171,13 @@
     type: river
     text: Forest & Creek
   notes: ""
-  map: { width: 12, height: 4 }
+  images:
+   - 001@4x3
+   - 003@2x3
+   - 005@8x8
+   - 004@4x4
+   - 002@4x4
+  map: { width: 6, height: 3 }
 
 - name: Coquitlam River Pathway
   slug: coquitlam-river-pathway
