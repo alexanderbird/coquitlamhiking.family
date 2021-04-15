@@ -43,6 +43,12 @@ exec('cat src/css/*.scss | sass --stdin build/style.css', (error, stdout, stderr
     if(error) console.error(error);
     if(stderr) console.error(stderr);
     if(stdout) console.log(stdout);
+
+    exec(`workbox injectManifest workbox-config.js`, (error, stdout, stderr) => {
+      if(error) console.error(error);
+      if(stderr) console.error(stderr);
+      if(stdout) console.log(stdout);
+    });
   });
 
 });
