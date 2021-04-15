@@ -23,7 +23,9 @@ registerRoute(
 
 registerRoute(
   ({url}) => url.origin === 'https://maps.googleapis.com' ||
-             url.origin === 'https://maps.gstatic.com',
+             url.origin === 'https://maps.gstatic.com' ||
+             url.origin === 'https://fonts.googleapis.com' ||
+             url.origin === 'https://fonts.gstatic.com',
   new NetworkFirst({
     cacheName: 'google-maps',
     plugins: [
