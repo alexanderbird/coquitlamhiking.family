@@ -170,7 +170,14 @@
   view:
     type: river
     text: Forest & Creek
-  notes: ""
+  notes: |
+    Smooth, wide, winding paths through a beautiful forest. There are several
+    bridges across creeks. If you start at the stairs on the Northeast side you
+    can do a loop&colon; down either of the paths, across the lower bridge, up
+    to Harper road, and then a short walk on the sidewalk back to the stairs
+    where you started. If you want a longer walk, instead of taking the right
+    fork on the upward part of the loop, take the left fork which is a
+    there-and-back path across another bridge leading to a view.
   images:
    - 001@4x4
    - 003@2x4
