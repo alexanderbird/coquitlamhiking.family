@@ -1,11 +1,17 @@
-import { precacheAndRoute } from 'workbox-precaching';
 import { registerRoute } from 'workbox-routing';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategies';
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 const ONE_DAY_IN_SECONDS = 24 * 60 * 60;
 
-precacheAndRoute(self.__WB_MANIFEST);
+
+registerRoute(
+  ({url}) => url.origin === self.location.origin,
+  new NetworkFirst({
+    cacheName: 'main'
+  })
+);
+
 
 registerRoute(
   ({url}) => url.origin === 'https://images.hiker.family',
