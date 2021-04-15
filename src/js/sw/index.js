@@ -39,3 +39,7 @@ registerRoute(
   }),
 );
 
+self.addEventListener('install', function (event) {
+  // Docs: https://bitsofco.de/what-self-skipwaiting-does-to-the-service-worker-lifecycle/
+  self.skipWaiting();
+});
