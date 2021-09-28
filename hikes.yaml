@@ -318,3 +318,26 @@
     - 002@4x3
     - 003@4x3
   map: { width: 6, height: 4 }
+
+- name: Deiner Creek Falls
+  slug: deiner-creek
+  area: Quarry Road
+  trailhead:
+    name: Munro Lake Trail at Quarry Road
+    latitude: 49.3219464
+    longitude: -122.6905053
+  view:
+    type: waterfall
+    text: Waterfall
+  notes: |
+    Follow the Munro Lake Trail until you get to the Dennet Lake Bluffs rock
+    climbing area. Backtrack a few minutes to just below the large rock and head
+    off the trail towards the creek. There are a few routes down, but you may
+    have to look around a bit to find the way.
+  images:
+    - 002@3x5
+    - 004@4x5
+    - 001@2x4
+    - 003@10x4
+  map: { width: 5, height: 5 }
+
