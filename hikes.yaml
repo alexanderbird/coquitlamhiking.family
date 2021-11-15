@@ -372,7 +372,7 @@
   hilly: no
   thumbnail: '001'
   images:
-    - 002@12x3
+    - 002@12x5
     - 001@4x3
     - map@4x3
     - 004@4x3
