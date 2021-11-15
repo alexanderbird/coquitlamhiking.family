@@ -132,7 +132,8 @@
   view:
     type: wetland
     text: Wetland
-  notes: "See trail listing at www.trailforks.com"
+  notes: |
+    See trail listing on <a href='www.trailforks.com'>Trailforks</a>
   images:
     - map@7x4
     - 003@12x4
@@ -153,11 +154,12 @@
     type: forest
     text: Forest
   notes: |
-    See trail listing at www.trailforks.com
+    See trail listing on <a href='www.trailforks.com'>Trailforks</a>
 
     Some highlights&colon;
-     - in the heat of summer&colon; Recycle &rarr; Woodland Walk &rarr; Lower Vic's takes you to some wading pools between little waterfalls
-     - for a big view (but grueling climb)&colon; Frank's &rarr; Gravel Road takes you to the power lines cut line where you can see Mount Baker and an expanse of the valley
+    <ul>
+      <li>in the heat of summer&colon; Recycle &rarr; Woodland Walk &rarr; Lower Vic's takes you to some wading pools between little waterfalls
+      <li>for a big view (but grueling climb)&colon; Frank's &rarr; Gravel Road takes you to the power lines cut line where you can see Mount Baker and an expanse of the valley
   images:
     - map@4x6
     - 002@4x3
