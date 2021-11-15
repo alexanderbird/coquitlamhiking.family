@@ -159,12 +159,15 @@
      - in the heat of summer&colon; Recycle &rarr; Woodland Walk &rarr; Lower Vic's takes you to some wading pools between little waterfalls
      - for a big view (but grueling climb)&colon; Frank's &rarr; Gravel Road takes you to the power lines cut line where you can see Mount Baker and an expanse of the valley
   images:
-    - map@4x8
+    - map@4x6
     - 002@4x3
     - 005@4x4
     - 003@4x2
-    - 004@4x4
     - 001@4x3
+    - 004@4x4
+    - 006@4x7
+    - 008@4x2
+    - 007@8x4
 
 - name: Harper Park
   slug: harper-park
