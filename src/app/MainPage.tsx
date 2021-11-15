@@ -9,9 +9,22 @@ import { Map as MapIcon } from './icons/Map';
 import { List as ListIcon } from './icons/List';
 
 const previewImageCSS = hike => {
-  if (!hike.images || !hike.images.length) return '';
-  const { name } = parseImage(hike.images[0]);
-  return `url(https://images.hiker.family/${hike.slug}/${name}.jpg?nf_resize=smartcrop&w=300&h=400)`;
+  const thumbnail = getHikeThumbnail(hike);
+  if (!thumbnail) return '';
+  return `url(https://images.hiker.family/${hike.slug}/${thumbnail}.jpg?nf_resize=smartcrop&w=300&h=400)`;
+}
+
+const getHikeThumbnail = hike => {
+  try {
+    if (hike.thumbnail) return hike.thumbnail;
+    if (!hike.images || !hike.images.length) return false;
+    const thumbnail = hike.images.map(parseImage).find(x => !x.isMap);
+    if (!thumbnail) return false;
+    return thumbnail.name;
+  } catch(e) {
+    e.message = `Cannot find preview image name for ${hike.slug}. ${e.message}`;
+    throw e;
+  }
 }
 
 const MetaTags = () => (<>

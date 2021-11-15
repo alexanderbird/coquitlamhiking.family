@@ -35,9 +35,9 @@
     early. There's a small rocky beach (Maple Beach) near Admiralty Point which
     is great for throwing rocks into the water.
   images:
-    - 001@8x5
+    - 002@8x5
     - map@4x5
-    - 002@4x4
+    - 001@4x4
     - 003@4x4
     - 004@4x4
 
@@ -186,7 +186,9 @@
     where you started. If you want a longer walk, instead of taking the right
     fork on the upward part of the loop, take the left fork which is a
     there-and-back path across another bridge leading to a view.
+  thumbnail: '001'
   images:
+   - 006@12x3
    - map@6x4
    - 001@4x4
    - 003@2x4
@@ -361,6 +363,9 @@
   view:
     type: ocean
     text: Ocean Inlet
+  stroller: yes
+  hilly: no
+  thumbnail: '001'
   images:
     - 002@12x3
     - 001@4x3
