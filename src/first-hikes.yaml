@@ -1,0 +1,33 @@
+season , duration , terrain                   , incline            , view                    , hike slug                   , hike                              , notes
+any    , <30m     , small rocks & roots       , flat               , river                   , galette-ave-coquitlam-river , Galette Ave Coquitlam River Trail ,
+any    , <30m     , smooth gravel             , flat               , ocean inlet             , rocky-point-pier            , Rocky Point Park Pier             ,
+any    , <30m     , boardwalk & smooth gravel , some ups and downs , forest & wetland        , minnekhada                  , Minnekhada                        , Fern Trail&comma; Lodge Trail&comma; or Addington Lookout Trail
+any    , <30m     , smooth gravel             , quite hilly        , forest                  , harper-park                 , Harper Park                       ,
+any    , 1hr+     , smooth gravel             , flat               , river between mountains , pitt-river                  , Poco Trail @ Prairie Ave          , for a loop&comma; try the Deboville Slough. If it's quite windy                       , consider Colony Farm Regional Park instead.
+any    , 1hr+     , rocks & roots             , some ups and downs , ocean inlet             , admiralty-point             , Admiralty Point                   , option to turn back at Cod Rock or Maple Beach
+summer , 1hr+     , rocks & roots             , quite hilly        , forest & waterfall      , deiner-creek                , Deiner Creek Falls
+any    , 1hr+     , rocks & roots             , quite hilly        , forest                  , pinecone-burke              , Pinecone Burke                    , Frank's &rarr; Conifer Drive &rarr; Hustler
+summer , 2hr+     , rocks & roots             , quite hilly        , forest & waterfall      , pinecone-burke              , Pinecone Burke                    , Recycle &rarr; Woodland Walk &rarr Lower Vic's &rarr; wading pools between waterfalls
+any    , 2hr+     , rocks & roots             , quite hilly        , forest & Fraser Valley  , pinecone-burke              , Pinecone Burke                    , Frank's &rarr; Gravel Road Climb
+any    , 2hr+     , rocks & roots             , quite hilly        , ocean inlet             , jug-island                  , Jug Island
+
+
+
+
+
+* season?
+
+summer | fall,winter,spring
+
+* duration?
+
+<30m | 1hr+ | 2hr+ | no preference
+
+* terrain? (select up to and including)
+
+smooth gravel > small rocks & roots > rocks & roots
+
+* incline (select up to and including)
+
+flat > some ups and downs > quite hilly
+

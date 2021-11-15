@@ -44,6 +44,24 @@ const MetaTags: FunctionComponent<{ hike: any }> = ({ hike }) => {
   </Fragment>);
 }
 
+const map = ({ hike, width, height }) => (
+  <Map latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} zoom={14} width={width} height={height}>
+    <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title='Trailhead' >
+      Trailhead:
+      <br/><b>{hike.trailhead.name}</b>
+      <br/><a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>Open in Google Maps</a>
+    </MapMarker>
+  </Map>
+);
+
+const image = ({ width, height, name, hikeSlug }) => (
+  <img
+    crossOrigin='anonymous'
+    style={`--width: ${width}; --height: ${height};`}
+    src={`https://images.hiker.family/${hikeSlug}/${name}.jpg?nf_resize=smartcrop&w=${width * 200}&h=${height * 200}`}
+    />
+)
+
 export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
   <App title={`${hike.name} | Coquitlam Family Hikes`} className='hike-page' MetaTagsComponent={() => <MetaTags hike={hike} />}>
     <nav>
@@ -70,23 +88,13 @@ export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
         </button>
       </p>
     </div>
-    <div class='image-gallery'
-      style={`--map-grid-width: ${hike.map && hike.map.width}; --map-grid-height: ${hike.map && hike.map.height};`}
-      >
-      <Map latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} zoom={14}>
-        <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title='Trailhead' >
-          Trailhead:
-          <br/><b>{hike.trailhead.name}</b>
-          <br/><a href={`https://www.google.com/maps/search/?api=1&query=${hike.trailhead.latitude},${hike.trailhead.longitude}`}>Open in Google Maps</a>
-        </MapMarker>
-      </Map>
-      { hike.images && hike.images.map(parseImage).map(({ name, width, height }) => (
-        <img
-          crossOrigin='anonymous'
-          style={`--width: ${width}; --height: ${height};`}
-          src={`https://images.hiker.family/${hike.slug}/${name}.jpg?nf_resize=smartcrop&w=${width * 200}&h=${height * 200}`}
-          />
+    <div class='image-gallery' >
+      { hike.images && hike.images.map(parseImage).map(({ isMap, name, width, height }) => (
+        isMap
+          ? map({ hike, width, height })
+          : image({ hikeSlug: hike.slug, name, width, height })
       ))}
     </div>
   </App>
 );
+

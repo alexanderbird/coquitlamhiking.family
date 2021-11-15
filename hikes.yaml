@@ -14,9 +14,9 @@
     Forested walk, some stairs. You finish at a gravel beach that looks out at
     Jug Island
   images:
+    - map@8x4
     - 001@4x4
     - 002@12x3
-  map: { width: 8, height: 4 }
 
 - name: Admiralty Point
   slug: admiralty-point
@@ -35,8 +35,11 @@
     early. There's a small rocky beach (Maple Beach) near Admiralty Point which
     is great for throwing rocks into the water.
   images:
-    - 001@4x5
-  map: { width: 8, height: 5 }
+    - 001@8x5
+    - map@4x5
+    - 002@4x4
+    - 003@4x4
+    - 004@4x4
 
 - name: Buntzen Ridge + Sugar Mountain Trail
   slug: buntzen-ridge-west
@@ -58,10 +61,10 @@
     At some times of the year there are lots of little springs crossing the trail (under little bridges).
 
     Very fun even if you only go a little ways up.
-  map: { width: 12, height: 4 }
+  images:
+    - map@12x4
 
-
-- name: Along the Pitt River
+- name: Poco Trail at Prairie Ave
   slug: pitt-river
   area: Pitt River
   trailhead:
@@ -82,13 +85,13 @@
     to the start of the Deboville Slough north trail, and then walk along there. 
 
   images:
+    - map@4x6
     - 001@4x3
     - 002@4x3
     - 003@4x3
     - 004@4x3
     - 005@5x5
     - 006@7x5
-  map: { width: 4, height: 6 }
 
 - name: Deboville Slough - North Side
   slug: deboville-slough
@@ -110,12 +113,12 @@
     fork to the right that leads to a birding observation deck. 
 
   images:
+    - map@9x4
     - 004@8x6
     - 002@6x4
     - 003@6x4
     - 001@3x4
     - 005@4x6
-  map: { width: 9, height: 4 }
 
 - name: Minnekhada
   slug: minnekhada
@@ -129,13 +132,13 @@
   view:
     type: wetland
     text: Wetland
-  notes: ""
+  notes: "See trail listing at www.trailforks.com"
   images:
+    - map@7x4
     - 003@12x4
     - 002@5x4
     - 001@6x8
     - 004@6x8
-  map: { width: 7, height: 4 }
 
 - name: Pinecone Burke Provincial Park
   slug: pinecone-burke
@@ -149,14 +152,19 @@
   view:
     type: forest
     text: Forest
-  notes: ""
+  notes: |
+    See trail listing at www.trailforks.com
+
+    Some highlights&colon;
+     - in the heat of summer&colon; Recycle &rarr; Woodland Walk &rarr; Lower Vic's takes you to some wading pools between little waterfalls
+     - for a big view (but grueling climb)&colon; Frank's &rarr; Gravel Road takes you to the power lines cut line where you can see Mount Baker and an expanse of the valley
   images:
+    - map@4x8
     - 002@4x3
     - 005@4x4
     - 003@4x2
     - 004@4x4
     - 001@4x3
-  map: { width: 4, height: 8 }
 
 - name: Harper Park
   slug: harper-park
@@ -179,12 +187,12 @@
     fork on the upward part of the loop, take the left fork which is a
     there-and-back path across another bridge leading to a view.
   images:
+   - map@6x4
    - 001@4x4
    - 003@2x4
    - 005@8x8
    - 004@4x4
    - 002@4x4
-  map: { width: 6, height: 4 }
 
 - name: Coquitlam River Pathway
   slug: coquitlam-river-pathway
@@ -200,12 +208,11 @@
     text: River
   notes: ""
   images:
+    - map@8x5
     - 004@4x5
     - 001@4x3
     - 002@4x3
     - 003@4x3
-
-  map: { width: 8, height: 5 }
 
 - name: Cascade Falls
   slug: cascade-falls
@@ -222,7 +229,8 @@
   links:
     - https://www.vancouvertrails.com/trails/cascade-falls/
   notes: ""
-  map: { width: 12, height: 4 }
+  images:
+    - map@12x4
 
 - name: Como Lake
   slug: como-lake
@@ -237,7 +245,8 @@
     type: ocean
     text: Lake
   notes: ""
-  map: { width: 12, height: 4 }
+  images:
+    - map@12x4
 
 - name: Mundy Park
   slug: mundy-park
@@ -254,9 +263,9 @@
   notes: |
     disk golf, epic place structure
   images:
+    - map@4x3
     - 001@4x3
     - 002@4x3
-  map: { width: 4, height: 3 }
 
 - name: Colony Farm Regional Park
   slug: colony-farm
@@ -273,7 +282,8 @@
   notes: |
     big, wide trails that are great for social walks where everyone's pushing a
     stroller
-  map: { width: 12, height: 4 }
+  images:
+    - map@12x4
 
 - name: Galette Ave Coquitlam River Trail
   slug: galette-ave-coquitlam-river
@@ -290,9 +300,9 @@
   notes: |
     A discrete little trail along Coquitlam River. Park at the end of the road.
   images:
+    - map@7x4
     - 001@5x4
     - 002@12x4
-  map: { width: 7, height: 4 }
 
 - name: Bert Flinn Park Loop
   slug: bert-flinn
@@ -312,12 +322,12 @@
     are several rooty and rocky sections that you'll have to carry even the most
     offroad-ready stroller over. 
   images:
+    - map@6x4
     - 001@6x4
     - 005@8x3
     - 004@4x6
     - 002@4x3
     - 003@4x3
-  map: { width: 6, height: 4 }
 
 - name: Deiner Creek Falls
   slug: deiner-creek
@@ -335,9 +345,26 @@
     off the trail towards the creek. There are a few routes down, but you may
     have to look around a bit to find the way.
   images:
+    - map@5x5
     - 002@3x5
     - 004@4x5
     - 001@2x4
     - 003@10x4
-  map: { width: 5, height: 5 }
 
+- name: Rocky Point Park Pier
+  slug: rocky-point-pier
+  area: Port Moody
+  trailhead:
+    name: Rocky Point Park
+    latitude: 49.2818136
+    longitude: -122.8497153
+  view:
+    type: ocean
+    text: Ocean Inlet
+  images:
+    - 002@12x3
+    - 001@4x3
+    - map@4x3
+    - 004@4x3
+    - 003@6x3
+    - 005@6x3
