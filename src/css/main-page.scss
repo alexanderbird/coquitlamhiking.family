@@ -1,4 +1,8 @@
 .main-page {
+  #map:not(.google-maps-api-loaded) {
+    display: none;
+  }
+
   /* Map Tab */
   #map-tab:target ~ .main ,
   #map-tab:not(:target) ~ #list-tab:not(:target) ~ .main {

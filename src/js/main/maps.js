@@ -1,6 +1,8 @@
 import { mapStyles } from './mapStyles';
 /* initMap is a magic method name that the google maps API uses */
 function initMap() {
+  document.querySelector('#map').classList.add('google-maps-api-loaded');
+
   const mapElement = document.getElementById('map');
   const markers = Array.from(mapElement.querySelectorAll('.map__marker'))
     .map(element => ({ dataset: element.dataset, element }))
