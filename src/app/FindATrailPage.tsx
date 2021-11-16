@@ -38,6 +38,20 @@ const HikeTile = ({ hikes, slug, attributes, notes, name }: HikeTileProps) => {
   );
 }
 
+/*
+ * The problem with the pure CSS option is that it doesn't protect you from dead ends. Instead, we should model
+ * the hikes as a directed graph from season to duration to terrain to incline to trail. At each step of the wizard,
+ * if there are no trail leaf nodes, then don't show the option. 
+ *
+ * For layer "Season", count each of the seasons as invalid. Do a BFT. Any season that leads to a trail is considered valid. 
+ * Allow the user to select any number of valid seasons, at least 1.
+ * press next
+ * traverse (depth=1) to the durations. Consider each of the durations invalid. Do a BFT. Any duration that leads to a trail is considered valid. 
+ * Allow the user to select any number of valid durations.
+ * press next.
+ * Repeat until we get to trails.
+ */
+
 export const FindATrailPage = ({ hikes }) => (
   <App title='Find A Trail' className='find-page' metaTags={metaTags}>
     <div id='map-tab'/>
