@@ -14,11 +14,6 @@ const metaTags = {
   path: "/find.html"
 }
 
-const Checkbox = ({ name, children, checked }: { name: string, children: any, checked?: boolean }) => (<>
-  <input type='checkbox' id={name} checked={checked}/>
-  <label for={name}>{ children }</label>
-</>);
-
 interface HikeTileProps {
   hikes: any[];
   slug: string;
@@ -139,6 +134,7 @@ export const FindATrailPage = ({ hikes }) => (
             name="Pinecone Burke: Frank's & the Gravel Road Climb to the View"
             notes="Frank's &rarr; Gravel Road Climb" />
           <HikeTile hikes={hikes} slug='jug-island' genome='f3lh' />
+          <button class='find-page__button-previous'>Previous</button>
           <button class='find-page__button-reset'>Reset</button>
         </div>
 

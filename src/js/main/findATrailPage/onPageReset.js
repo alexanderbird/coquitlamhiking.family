@@ -3,5 +3,8 @@ export function onPageReset() {
 
   Array.from(document.querySelectorAll('.option-field-set')).forEach(optionFieldSet => {
     optionFieldSet.classList.remove('option-field-set--complete');
+    Array.from(optionFieldSet.querySelectorAll('input[type="checked"]')).forEach(input => {
+      input.checked = false;
+    });
   });
 }

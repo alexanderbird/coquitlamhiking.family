@@ -65,3 +65,7 @@ input[type=checkbox] {
     grid-template-columns: repeat(12, 1fr);
   }
 }
+
+label.label--hidden {
+  display: none;
+}

@@ -14,4 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   document.querySelector('.find-page__button-reset').addEventListener('click', onPageReset);
+  document.querySelector('.find-page__button-previous').addEventListener('click', () => onPrevious(document.querySelector('.trails')));
 });
