@@ -1,0 +1,63 @@
+#season-summer:not(:checked) ~ [data-attributes*="~season-summer~"] { display: none; }
+#season-fall:not(:checked) ~ [data-attributes*="~season-fall~"] { display: none; }
+#season-winter:not(:checked) ~ [data-attributes*="~season-winter~"] { display: none; }
+#season-spring:not(:checked) ~ [data-attributes*="~season-spring~"] { display: none; }
+
+#season-summer:not(:checked) ~ #season-fall:not(:checked) ~ #season-winter:not(:checked) ~ #season-spring:not(:checked) ~ [data-attributes*="~season-any~"] { display: none; }
+
+#duration-30:not(:checked) ~ [data-attributes*="~duration-30~"] { display: none; }
+#duration-60:not(:checked) ~ [data-attributes*="~duration-60~"] { display: none; }
+#duration-120:not(:checked) ~ [data-attributes*="~duration-120~"] { display: none; }
+
+#terrain-smooth:not(:checked) ~ [data-attributes*="~terrain-smooth~"] { display: none; }
+#terrain-small:not(:checked) ~ [data-attributes*="~terrain-small~"] { display: none; }
+#terrain-large:not(:checked) ~ [data-attributes*="~terrain-large~"] { display: none; }
+
+#incline-flat:not(:checked) ~ [data-attributes*="~incline-flat~"] { display: none; }
+#incline-ups-and-downs:not(:checked) ~ [data-attributes*="~incline-ups-and-downs~"] { display: none; }
+#incline-hilly:not(:checked) ~ [data-attributes*="~incline-hilly~"] { display: none; }
+
+.trailfinder {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+h3 {
+  grid-column-end: span 12;
+  height: auto;
+}
+
+label {
+  display: block;
+  padding: 50px;
+  border: 2px solid black;
+  grid-column-end: span 4;
+}
+
+[for=season-summer],
+[for=season-fall],
+[for=season-winter],
+[for=season-spring] {
+  grid-column-end: span 3;
+}
+
+input[type=checkbox]:checked + label {
+  background-color: blue;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.hike-tile {
+  display: block;
+  border: 2px solid black;
+  grid-column-end: span 4;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+}
+
