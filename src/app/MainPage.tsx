@@ -25,7 +25,7 @@ export const MainPage = ({ hikes, mapCenter }) => (
     <div id='map-tab'/>
     <div id='list-tab'/>
     <div class='main'>
-      <Nav />
+      <Nav active='map'/>
       <Map longitude={mapCenter.longitude} latitude={mapCenter.latitude} zoom={mapCenter.zoom} >
         { hikes.map(hike => (
           <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title={hike.name} >
@@ -34,7 +34,7 @@ export const MainPage = ({ hikes, mapCenter }) => (
               style={`--background: ${previewImageCSS(hike)};`}
               >
               <div class='trailhead-map-marker-detail__text'>
-                <h3><a href={`./${hike.slug}.html`}>{hike.name}</a></h3>
+                <h3><a href={`./trail/${hike.slug}.html`}>{hike.name}</a></h3>
                 <TrailSummary {...hike} />
               </div>
             </div>
@@ -45,7 +45,7 @@ export const MainPage = ({ hikes, mapCenter }) => (
         { hikes.sort((lhs, rhs) => lhs.area > rhs.area ? 1 : -1).map(hike => (
           <div class='hike-tile'>
             <div class='hike-tile__left-side hike-tile__text'>
-              <a href={`./${hike.slug}.html`}>
+              <a href={`./trail/${hike.slug}.html`}>
                 <div class='hike-tile__text__name'>{hike.name}</div>
                 <div class='hike-tile__text__area'>({hike.area} Area)</div>
               </a>

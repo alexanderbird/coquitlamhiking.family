@@ -102,15 +102,17 @@ nav svg {
   position: fixed;
   top: 0;
 }
-#map-tab:target ~ .main nav .map-link,
-#map-tab:not(:target) ~ #list-tab:not(:target) ~ .main nav .map-link {
+
+#map-tab:not(:target) ~ #list-tab:not(:target) ~ .main nav .nav-link--active {
+  background-color: var(--background-color);
+}
+#map-tab:target ~ .main nav .map-link {
   background-color: var(--background-color);
 }
 #list-tab:target ~ .main nav .list-link {
   background-color: var(--background-color);
 }
-.map-link,
-.list-link {
+.nav-link {
   justify-self: flex-end;
   padding: 5px;
   --background-color: #FFF6;
@@ -118,7 +120,7 @@ nav svg {
   margin: 1px;
 }
 
-.map-link {
+.nav-link:first-of-type {
   margin-left: auto;
 }
 

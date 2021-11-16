@@ -3,9 +3,11 @@ import * as path from 'path';
 import { h } from 'preact';
 import * as dotenv from 'dotenv'; dotenv.config();
 import { exec } from 'child_process';
+import * as rimraf from 'rimraf';
 
 import { MainPage } from './src/app/MainPage';
 import { HikePage } from './src/app/HikePage';
+import { FindATrailPage } from './src/app/FindATrailPage';
 import { loadData } from './src/loadData';
 import * as mapCenter from './src/coquitlam.json';
 
@@ -17,11 +19,15 @@ if (!hikes) {
   process.exit(1);
 }
 
+rimraf.sync('./build');
+fs.mkdirSync('./build/');
 fs.writeFileSync('./build/index.html', render(<MainPage hikes={hikes} mapCenter={mapCenter} />));
+fs.writeFileSync('./build/find.html', render(<FindATrailPage hikes={hikes} />));
 
+fs.mkdirSync('./build/trail');
 hikes.forEach(hike => {
   const html = render(<HikePage hike={hike} />);
-  fs.writeFileSync(`./build/${hike.slug}.html`, html);
+  fs.writeFileSync(`./build/trail/${hike.slug}.html`, html);
 });
 
 fs.readdirSync('./src/static')

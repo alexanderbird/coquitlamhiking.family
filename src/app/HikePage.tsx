@@ -24,7 +24,7 @@ function hikeDescription(hike) {
 const metaTags = hike => ({
   title: `${hike.name} | Coquitlam Family Hikes`,
   description: hikeDescription(hike),
-  path: `${hike.slug}.html`,
+  path: `trail/${hike.slug}.html`,
   image: getHikeThumbnailUrl(hike)
 })
 
