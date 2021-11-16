@@ -8,7 +8,7 @@ export function onNext(optionFieldSet) {
 }
 
 function updateState(optionFieldSet, trailfinderData) {
-  const selectedCodes = Array.from(optionFieldSet.querySelectorAll('input[type="checkbox"]:checked')).map(input => {
+  const selectedCodes = Array.from(optionFieldSet.querySelectorAll('.option-input__checkbox:checked')).map(input => {
     return input.dataset.code;
   });
   const optionPattern = selectedCodes.length ? `(${selectedCodes.join('|')})` : '(.)';
@@ -28,17 +28,17 @@ function prepareForNextStep(optionFieldSet, trailfinderData) {
 
 function filterOptions(optionFieldSet, currentSelectionPattern) {
   const allTrailGenomes = Array.from(document.querySelectorAll('.hike-tile')).map(tile => tile.dataset.genome);
-  Array.from(optionFieldSet.querySelectorAll('input[type="checkbox"]')).forEach(input => {
+  Array.from(optionFieldSet.querySelectorAll('.option-input__checkbox')).forEach(input => {
     input.checked = false;
     const codeForThisInput = input.dataset.code;
     const hypotheticalSelectionPattern = currentSelectionPattern + `(${codeForThisInput})`;
     const hasAtLeastOneTrail = allTrailGenomes.some(g => g.match(hypotheticalSelectionPattern));
-    getNextSibling(input, 'label').classList.toggle('label--hidden', !hasAtLeastOneTrail);
+    getNextSibling(input, 'label').classList.toggle('option-input__label--hidden', !hasAtLeastOneTrail);
   });
 }
 
 function autoProceedIfApplicable(optionFieldSet) {
-  if (optionFieldSet.querySelectorAll('label:not(.label--hidden)').length < 2) {
+  if (optionFieldSet.querySelectorAll('label:not(.option-input__label--hidden)').length < 2) {
     onNext(optionFieldSet);
   }
 }

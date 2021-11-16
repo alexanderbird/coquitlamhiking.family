@@ -96,8 +96,8 @@ const OptionFieldSet = ({ option }: { option: AttributeType }) => {
 
 const OptionInput = ({ value }: { value: AttributeValue }) => {
   return (<>
-    <input type='checkbox' id={value.id} data-code={value.code} />
-    <label for={value.id}>{ value.label }</label>
+    <input class='option-input__checkbox' type='checkbox' id={value.id} data-code={value.code} />
+    <label class='option-input__label' for={value.id}>{ value.label }</label>
   </>);
 }
 

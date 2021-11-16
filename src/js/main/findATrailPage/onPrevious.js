@@ -17,7 +17,7 @@ function markPreviousAsIncomplete(previousOptionFieldSet) {
 }
 
 function goBackAgainIfOnlyOneOption(previousOptionFieldSet) {
-  if (previousOptionFieldSet.querySelectorAll('label:not(.label--hidden)').length < 2) {
+  if (previousOptionFieldSet.querySelectorAll('.option-input__label:not(.option-input__label--hidden)').length < 2) {
     onPrevious(previousOptionFieldSet);
   }
 }

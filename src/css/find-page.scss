@@ -1,71 +1,66 @@
-h3 {
-  grid-column-end: span 12;
-  height: auto;
-}
-
-label {
-  display: block;
-  padding: 50px;
-  border: 2px solid black;
-  grid-column-end: span 4;
-}
-
-input[type=checkbox]:checked + label {
-  background-color: #0002;
-}
-
-input[type=checkbox] {
-  display: none;
-}
-
-.hike-tile {
-  display: block;
-  border: 2px solid black;
-  grid-column-end: span 4;
-
-  img {
-    width: 50px;
-    height: auto;
-  }
-
-  &:not(.hike-tile--visible) {
-    display: none;
-  }
-}
-
-
-.option-field-set:first-of-type .option-field-set__button-previous {
-  display: none;
-}
-
-.option-field-set {
-  display: none;
-}
-
-.option-field-set:first-of-type:not(.option-field-set--complete) {
-  display: block;
-}
-
-.option-field-set.option-field-set--complete + .option-field-set {
-  display: block;
-}
-
-.option-field-set.option-field-set--complete {
-  display: none !important;
-}
-
 .trailfinder {
-  .trails {
+  .option-field-set {
+    --display: block;
     display: none;
+
+    &.option-field-set--complete {
+      display: none !important;
+
+      & + .option-field-set,
+      & + .trails {
+        display: var(--display);
+      }
+    }
+
+    &:first-of-type {
+      & .option-field-set__button-previous {
+        display: none;
+      }
+
+      &:not(.option-field-set--complete) {
+        display: var(--display);
+      }
+    }
+
+    .option-input__checkbox {
+      display: none;
+
+      &:checked + .option-input__label {
+        background-color: #0002;
+      }
+    }
+
+    .option-input__label {
+      display: block;
+      padding: 50px;
+      border: 2px solid black;
+      grid-column-end: span 4;
+
+      &.option-input__label--hidden {
+        display: none;
+      }
+    }
   }
 
-  .option-field-set--complete + .trails {
-    display: grid;
+  .trails {
+    --display: grid;
+    display: none;
     grid-gap: 10px;
     grid-template-columns: repeat(12, 1fr);
-  }
-}
 
-label.label--hidden {
-  display: none;
+    .hike-tile {
+      display: block;
+      border: 2px solid black;
+      grid-column-end: span 4;
+
+      img {
+        width: 50px;
+        height: auto;
+      }
+
+      &:not(.hike-tile--visible) {
+        display: none;
+      }
+    }
+  }
 }
