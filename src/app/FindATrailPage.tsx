@@ -10,7 +10,7 @@ import { Nav } from './Nav';
 const metaTags = {
   title: "🥾 Find A Trail",
   description: "Choose your weather, duration, terrain, and incline to find a walk or hike in Coquitlam",
-  image: "https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=800&h=800",
+  image: "deboville-slough/004.jpg",
   path: "/find.html"
 }
 

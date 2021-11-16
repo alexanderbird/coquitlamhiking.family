@@ -9,7 +9,7 @@ import { Map as MapIcon } from './icons/Map';
 import { MapPin } from './icons/MapPin';
 import { List as ListIcon } from './icons/List';
 import { Share as ShareIcon } from './icons/Share';
-import { getHikeThumbnailUrl } from './getHikeThumbnailUrl';
+import { getHikeThumbnailPath } from './getHikeThumbnailUrl';
 
 function hikeDescription(hike) {
   let result = 'From our digital scrapbook of our favorite hikes in the area: this one has ';
@@ -25,7 +25,7 @@ const metaTags = hike => ({
   title: `${hike.name} | Coquitlam Family Hikes`,
   description: hikeDescription(hike),
   path: `trail/${hike.slug}.html`,
-  image: getHikeThumbnailUrl(hike)
+  image: getHikeThumbnailPath(hike)
 })
 
 

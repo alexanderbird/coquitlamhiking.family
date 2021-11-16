@@ -6,6 +6,15 @@ export const getHikeThumbnailUrl = hike => {
   return `https://images.hiker.family/${hike.slug}/${thumbnail}.jpg?nf_resize=smartcrop&w=300&h=400`;
 }
 
+export const getHikeThumbnailPath = hike => {
+  const thumbnail = getHikeThumbnail(hike);
+  if (!thumbnail) {
+    console.warn(`No thumbnail for ${hike.slug}`);
+    return '';
+  }
+  return `${hike.slug}/${thumbnail}.jpg`;
+}
+
 const getHikeThumbnail = hike => {
   try {
     if (hike.thumbnail) return hike.thumbnail;

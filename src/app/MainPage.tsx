@@ -16,7 +16,7 @@ const previewImageCSS = hike => {
 const metaTags = {
   title: "🥾 Coquitlam Family Hikes",
   description: "A digital scrapbook of our favorite walks and hikes in the Coquitlam area." ,
-  image: "https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=800&h=800",
+  image: "deboville-slough/004.jpg",
   path: ""
 }
 
