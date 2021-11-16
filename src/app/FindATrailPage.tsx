@@ -14,7 +14,7 @@ const metaTags = {
   path: "/find.html"
 }
 
-const Checkbox = ({ name, children, checked }) => (<>
+const Checkbox = ({ name, children, checked }: { name: string, children: any, checked?: boolean }) => (<>
   <input type='checkbox' id={name} checked={checked}/>
   <label for={name}>{ children }</label>
 </>);
@@ -53,6 +53,60 @@ const HikeTile = ({ hikes, slug, attributes, notes, name }: HikeTileProps) => {
  * Repeat until we get to trails.
  */
 
+class AttributeType {
+  index: number;
+  values: AttributeValue[];
+  label: string;
+
+  constructor({ index, values, label }) {
+    Object.assign(this, { index, values, label });
+  }
+}
+
+class AttributeValue {
+  code: string;
+  label: string;
+  constructor(code, label) {
+    Object.assign(this, { code, label });
+  }
+}
+
+const options = [
+  new AttributeType({ index: 0, label: 'Season', values: [
+    new AttributeValue('h', 'Very Hot'),
+    new AttributeValue('f', 'Very Foggy'),
+    new AttributeValue('e', 'Everything Else')
+  ] }),
+  new AttributeType({ index: 1, label: 'Duration', values: [
+    new AttributeValue('1', '<30m'),
+    new AttributeValue('2', '1hr+'),
+    new AttributeValue('3', '2hr+'),
+  ] }),
+  new AttributeType({ index: 2, label: 'Terrain', values: [
+    new AttributeValue('g', 'Smooth Gravel'),
+    new AttributeValue('s', 'Small Rocks & Roots'),
+    new AttributeValue('l', 'Large Rocks & Roots'),
+  ] }),
+  new AttributeType({ index: 3, label: 'Incline', values: [
+    new AttributeValue('f', 'Flat'),
+    new AttributeValue('s', 'Some Ups & Downs'),
+    new AttributeValue('h', 'Quite Hilly'),
+  ] }),
+]
+
+const OptionFieldSet = ({ option }: { option: AttributeType }) => {
+  return (
+    <fieldset data-index={option.index}>
+      <legend>{option.label}</legend>
+      { option.values.map(optionValue => <OptionInput value={optionValue} />) }
+    </fieldset>
+  );
+}
+
+const OptionInput = ({ value }: { value: AttributeValue }) => {
+  return <Checkbox name=''>{value.label}</Checkbox>
+}
+
 export const FindATrailPage = ({ hikes }) => (
   <App title='Find A Trail' className='find-page' metaTags={metaTags}>
     <div id='map-tab'/>
@@ -61,26 +115,9 @@ export const FindATrailPage = ({ hikes }) => (
       <Nav active='find'/>
       <div>This page is a work in progress</div>
       <div class='trailfinder'>
-        <h3>Season</h3>
-        <Checkbox checked={false} name='season-summer'>Summer</Checkbox>
-        <Checkbox checked={false} name='season-fall'>Fall</Checkbox>
-        <Checkbox checked={false} name='season-winter'>Winter</Checkbox>
-        <Checkbox checked={false} name='season-spring'>Spring</Checkbox>
-
-        <h3>Duration</h3>
-        <Checkbox checked={true} name='duration-30'>&lt;30m</Checkbox>
-        <Checkbox checked={true} name='duration-60'>1hr+</Checkbox>
-        <Checkbox checked={true} name='duration-120'>2hr+</Checkbox>
-
-        <h3>Terrain</h3>
-        <Checkbox checked={true} name='terrain-smooth'>smooth gravel</Checkbox>
-        <Checkbox checked={true} name='terrain-small'>small rocks &amp; roots</Checkbox>
-        <Checkbox checked={true} name='terrain-large'>large rocks &amp; roots</Checkbox>
-
-        <h3>Incline</h3>
-        <Checkbox checked={true} name='incline-flat'>flat</Checkbox>
-        <Checkbox checked={true} name='incline-ups-and-downs'>some ups &amp; downs</Checkbox>
-        <Checkbox checked={true} name='incline-hilly'>quite hilly</Checkbox>
+        {
+          options.map(option => <OptionFieldSet option={option} />)
+        }
 
         <HikeTile hikes={hikes} slug='galette-ave-coquitlam-river'
           attributes={['season-any', 'duration-30', 'terrain-small', 'incline-flat']} />
