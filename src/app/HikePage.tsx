@@ -7,6 +7,7 @@ import { TrailSummary } from './TrailSummary';
 import { parseImage } from './parseImage';
 import { Map as MapIcon } from './icons/Map';
 import { MapPin } from './icons/MapPin';
+import { Nav } from './Nav';
 import { List as ListIcon } from './icons/List';
 import { Share as ShareIcon } from './icons/Share';
 import { getHikeThumbnailPath } from './getHikeThumbnailUrl';
@@ -49,11 +50,7 @@ const image = ({ width, height, name, hikeSlug }) => (
 
 export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
   <App title={`${hike.name} | Coquitlam Family Hikes`} className='hike-page' metaTags={metaTags(hike)}>
-    <nav>
-      <h2>{hike.name}</h2>
-      <a class='map-link' href='/#map-tab'><MapIcon /></a>
-      <a class='list-link' href='/#list-tab'><ListIcon /></a>
-    </nav>
+    <Nav active='find' title={hike.name}/>
     <div class='hike-topmatter'>
       <h4>{hike.area} Area</h4>
       <TrailSummary {...hike} />

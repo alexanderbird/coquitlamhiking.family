@@ -151,7 +151,7 @@ export const FindATrailPage = ({ hikes }) => (
             name="Pinecone Burke: Frank's & the Gravel Road Climb to the View"
             notes="Frank's &rarr; Gravel Road Climb" />
           <HikeTile hikes={hikes} slug='jug-island' genome='f3lh' />
-          <div class='find-page__button-area generic-row-of-elements'>
+          <div class='find-page__button-area'>
             <button class='find-page__button-previous'>Previous</button>
             <button class='find-page__button-reset'>Reset</button>
           </div>
