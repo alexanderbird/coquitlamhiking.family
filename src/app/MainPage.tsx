@@ -4,14 +4,8 @@ import { App } from './App';
 import { Map } from './Map';
 import { MapMarker } from './MapMarker';
 import { TrailSummary } from './TrailSummary';
-import { getHikeThumbnailUrl } from './getHikeThumbnailUrl';
+import { getHikeThumbnailCSSUrl } from './getHikeThumbnailUrl';
 import { Nav } from './Nav';
-
-const previewImageCSS = hike => {
-  const thumbnail = getHikeThumbnailUrl(hike);
-  if (!thumbnail) return '';
-  return `url(${thumbnail})`;
-}
 
 const metaTags = {
   title: "🥾 Coquitlam Family Hikes",
@@ -31,7 +25,7 @@ export const MainPage = ({ hikes, mapCenter }) => (
           <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title={hike.name} >
             <div
               class='trailhead-map-marker-detail'
-              style={`--background: ${previewImageCSS(hike)};`}
+              style={`--background: ${getHikeThumbnailCSSUrl(hike)};`}
               >
               <div class='trailhead-map-marker-detail__text'>
                 <h3><a href={`./trail/${hike.slug}.html`}>{hike.name}</a></h3>

@@ -3,7 +3,7 @@ export function onPageReset() {
 
   Array.from(document.querySelectorAll('.option-field-set')).forEach(optionFieldSet => {
     optionFieldSet.classList.remove('option-field-set--complete');
-    Array.from(optionFieldSet.querySelectorAll('input[type="checked"]')).forEach(input => {
+    Array.from(optionFieldSet.querySelectorAll('.option-input__checkbox')).forEach(input => {
       input.checked = false;
     });
   });

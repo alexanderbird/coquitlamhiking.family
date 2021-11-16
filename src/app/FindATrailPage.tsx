@@ -4,7 +4,7 @@ import { App } from './App';
 import { Map } from './Map';
 import { MapMarker } from './MapMarker';
 import { TrailSummary } from './TrailSummary';
-import { getHikeThumbnailUrl } from './getHikeThumbnailUrl';
+import { getHikeThumbnailCSSUrl } from './getHikeThumbnailUrl';
 import { Nav } from './Nav';
 
 const metaTags = {
@@ -25,12 +25,17 @@ interface HikeTileProps {
 const HikeTile = ({ hikes, slug, genome, notes, name }: HikeTileProps) => {
   const hike = hikes.find(x => x.slug === slug);
   return (
-    <a class='hike-tile' href={`/trail/${hike.slug}.html`} data-genome={genome}>
-      <img src={getHikeThumbnailUrl(hike)} />
-      <h4>{name || hike.name}</h4>
-      <TrailSummary {...hike} />
-      <p>{notes}</p>
-    </a>
+    <div
+      class='hike-tile'
+      data-genome={genome}
+      style={`--background: ${getHikeThumbnailCSSUrl(hike)};`}
+      >
+      <div class='hike-tile__text'>
+        <h3><a href={`./trail/${hike.slug}.html`}>{name || hike.name}</a></h3>
+        <TrailSummary {...hike} />
+        <p>{notes}</p>
+      </div>
+    </div>
   );
 }
 
@@ -53,33 +58,34 @@ function toID(text: string) {
 class AttributeValue {
   code: string;
   label: string;
+  explanation?: string;
   id: string;
-  constructor(code, label) {
+  constructor(code, label, explanation = '') {
     this.id = 'attribute-value--' + toID(label) + '--' + code;
-    Object.assign(this, { code, label });
+    Object.assign(this, { code, label, explanation });
   }
 }
 
 const options = [
   new AttributeType({ index: 0, label: 'Weather', values: [
-    new AttributeValue('h', 'Very Hot'),
-    new AttributeValue('f', 'Foggy'),
-    new AttributeValue('e', 'Everything Else')
+    new AttributeValue('h', 'Very Hot', 'something with water to cool off in'),
+    new AttributeValue('f', 'Foggy', 'something sheltered that looks beautiful in the fog'),
+    new AttributeValue('e', 'Anything Else')
   ] }),
   new AttributeType({ index: 1, label: 'Duration', values: [
-    new AttributeValue('1', '<30m'),
-    new AttributeValue('2', '1hr+'),
-    new AttributeValue('3', '2hr+'),
+    new AttributeValue('1', 'Short', 'less than one hour'),
+    new AttributeValue('2', 'Medium', 'one to two hours'),
+    new AttributeValue('3', 'Long', 'two or more hours'),
   ] }),
   new AttributeType({ index: 2, label: 'Terrain', values: [
-    new AttributeValue('g', 'Smooth Gravel'),
-    new AttributeValue('s', 'Small Rocks & Roots'),
-    new AttributeValue('l', 'Large Rocks & Roots'),
+    new AttributeValue('g', 'Smooth Gravel', 'suitable for strollers and casual walking'),
+    new AttributeValue('s', 'Small Rocks & Roots', 'they\'re there, but you can mostly ignore them'),
+    new AttributeValue('l', 'Large Rocks & Roots', 'obstacles will require big steps and a conscious effort to cross'),
   ] }),
   new AttributeType({ index: 3, label: 'Incline', values: [
     new AttributeValue('f', 'Flat'),
-    new AttributeValue('s', 'Some Ups & Downs'),
-    new AttributeValue('h', 'Quite Hilly'),
+    new AttributeValue('s', 'Some Ups & Downs', 'some gentle inclines throughout the trail'),
+    new AttributeValue('h', 'Quite Hilly', 'stairs or steep hills for some or all of the hike'),
   ] }),
 ]
 
@@ -87,9 +93,14 @@ const OptionFieldSet = ({ option }: { option: AttributeType }) => {
   return (
     <fieldset class='option-field-set' id={option.id} data-index={option.index}>
       <legend>{option.label}</legend>
-      { option.values.map(optionValue => <OptionInput value={optionValue} />) }
-      <button class='option-field-set__button-previous'>Previous</button>
-      <button class='option-field-set__button-next'>Next</button>
+      <div class='option-field-set__input-area generic-row-of-elements'>
+        { option.values.map(optionValue => <OptionInput value={optionValue} />) }
+      </div>
+      <hr />
+      <div class='option-field-set__button-area generic-row-of-elements'>
+        <button class='option-field-set__button-previous'>Previous</button>
+        <button class='option-field-set__button-next'>Next</button>
+      </div>
     </fieldset>
   );
 }
@@ -97,7 +108,10 @@ const OptionFieldSet = ({ option }: { option: AttributeType }) => {
 const OptionInput = ({ value }: { value: AttributeValue }) => {
   return (<>
     <input class='option-input__checkbox' type='checkbox' id={value.id} data-code={value.code} />
-    <label class='option-input__label' for={value.id}>{ value.label }</label>
+    <label class='option-input__label' for={value.id}>
+      <b>{ value.label }</b>
+      <i>{value.explanation}</i>
+    </label>
   </>);
 }
 
@@ -107,8 +121,8 @@ export const FindATrailPage = ({ hikes }) => (
     <div id='list-tab'/>
     <div class='main'>
       <Nav active='find' title='Find A Trail'/>
-      <div>This page is a work in progress</div>
       <div class='trailfinder'>
+        <p class='trailfinder__prompt'>What type of hike or walk are you looking for?</p>
         {
           options.map(option => <OptionFieldSet option={option} />)
         }
@@ -137,8 +151,10 @@ export const FindATrailPage = ({ hikes }) => (
             name="Pinecone Burke: Frank's & the Gravel Road Climb to the View"
             notes="Frank's &rarr; Gravel Road Climb" />
           <HikeTile hikes={hikes} slug='jug-island' genome='f3lh' />
-          <button class='find-page__button-previous'>Previous</button>
-          <button class='find-page__button-reset'>Reset</button>
+          <div class='find-page__button-area generic-row-of-elements'>
+            <button class='find-page__button-previous'>Previous</button>
+            <button class='find-page__button-reset'>Reset</button>
+          </div>
         </div>
 
       </div>

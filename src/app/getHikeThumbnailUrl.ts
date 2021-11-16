@@ -1,5 +1,12 @@
 import { parseImage } from './parseImage';
 
+export const getHikeThumbnailCSSUrl = hike => {
+  const thumbnail = getHikeThumbnailUrl(hike);
+  if (!thumbnail) return '';
+  return `url(${thumbnail})`;
+}
+
+
 export const getHikeThumbnailUrl = hike => {
   const thumbnail = getHikeThumbnail(hike);
   if (!thumbnail) return '';
