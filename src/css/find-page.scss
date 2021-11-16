@@ -1,28 +1,3 @@
-#season-summer:not(:checked) ~ [data-attributes*="~season-summer~"] { display: none; }
-#season-fall:not(:checked) ~ [data-attributes*="~season-fall~"] { display: none; }
-#season-winter:not(:checked) ~ [data-attributes*="~season-winter~"] { display: none; }
-#season-spring:not(:checked) ~ [data-attributes*="~season-spring~"] { display: none; }
-
-#season-summer:not(:checked) ~ #season-fall:not(:checked) ~ #season-winter:not(:checked) ~ #season-spring:not(:checked) ~ [data-attributes*="~season-any~"] { display: none; }
-
-#duration-30:not(:checked) ~ [data-attributes*="~duration-30~"] { display: none; }
-#duration-60:not(:checked) ~ [data-attributes*="~duration-60~"] { display: none; }
-#duration-120:not(:checked) ~ [data-attributes*="~duration-120~"] { display: none; }
-
-#terrain-smooth:not(:checked) ~ [data-attributes*="~terrain-smooth~"] { display: none; }
-#terrain-small:not(:checked) ~ [data-attributes*="~terrain-small~"] { display: none; }
-#terrain-large:not(:checked) ~ [data-attributes*="~terrain-large~"] { display: none; }
-
-#incline-flat:not(:checked) ~ [data-attributes*="~incline-flat~"] { display: none; }
-#incline-ups-and-downs:not(:checked) ~ [data-attributes*="~incline-ups-and-downs~"] { display: none; }
-#incline-hilly:not(:checked) ~ [data-attributes*="~incline-hilly~"] { display: none; }
-
-.trailfinder {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(12, 1fr);
-}
-
 h3 {
   grid-column-end: span 12;
   height: auto;
@@ -35,15 +10,8 @@ label {
   grid-column-end: span 4;
 }
 
-[for=season-summer],
-[for=season-fall],
-[for=season-winter],
-[for=season-spring] {
-  grid-column-end: span 3;
-}
-
 input[type=checkbox]:checked + label {
-  background-color: blue;
+  background-color: #0002;
 }
 
 input[type=checkbox] {
@@ -61,3 +29,35 @@ input[type=checkbox] {
   }
 }
 
+
+.option-field-set:first-of-type .option-field-set__button-previous {
+  display: none;
+}
+
+.option-field-set {
+  display: none;
+}
+
+.option-field-set:first-of-type:not(.option-field-set--complete) {
+  display: block;
+}
+
+.option-field-set.option-field-set--complete + .option-field-set {
+  display: block;
+}
+
+.option-field-set.option-field-set--complete {
+  display: none !important;
+}
+
+.trailfinder {
+  .trails {
+    display: none;
+  }
+
+  .option-field-set--complete + .trails {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
