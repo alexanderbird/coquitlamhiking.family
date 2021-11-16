@@ -114,6 +114,9 @@ export const FindATrailPage = ({ hikes }) => (
         }
 
         <div class='trails'>
+          <HikeTile hikes={hikes} slug='pinecone-burke' genome='f1sh'
+            name="Pinecone Burke: Downhill of Harper Access Road"
+            notes="Park at the yellow gate. There's a trail 100m south of the gate. It's not a listed mountain bike trail so you don't have to worry about cyclists" />
           <HikeTile hikes={hikes} slug='galette-ave-coquitlam-river' genome='e1sf' />
           <HikeTile hikes={hikes} slug='rocky-point-pier' genome='e1gf' />
           <HikeTile hikes={hikes} slug='minnekhada' genome='e1ss'
