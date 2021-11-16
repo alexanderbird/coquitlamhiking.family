@@ -25,7 +25,7 @@ export const MainPage = ({ hikes, mapCenter }) => (
     <div id='map-tab'/>
     <div id='list-tab'/>
     <div class='main'>
-      <Nav active='map'/>
+      <Nav active='map' title='Coquitlam Family Hikes' />
       <Map longitude={mapCenter.longitude} latitude={mapCenter.latitude} zoom={mapCenter.zoom} >
         { hikes.map(hike => (
           <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title={hike.name} >

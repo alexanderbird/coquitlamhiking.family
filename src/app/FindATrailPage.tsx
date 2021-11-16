@@ -111,7 +111,7 @@ export const FindATrailPage = ({ hikes }) => (
     <div id='map-tab'/>
     <div id='list-tab'/>
     <div class='main'>
-      <Nav active='find'/>
+      <Nav active='find' title='Find A Trail'/>
       <div>This page is a work in progress</div>
       <div class='trailfinder'>
         {
