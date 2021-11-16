@@ -10,3 +10,5 @@ export const TrailSummary = ({ hilly, stroller, view }) => (
     <View {...view} />
   </div>
 )
+
+export const ViewIcon = ({ view }) => <View {...view} />;
