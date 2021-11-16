@@ -1,9 +1,11 @@
 import { h } from 'preact';
 
+import { MetaTags } from './MetaTags';
+
 const icon = (image, size) => 
   `https://images.hiker.family/${image}.jpg?nf_resize=smartcrop&w=${size}&h=${size}`;
 
-export const App = ({ children, title, className, MetaTagsComponent }) => (
+export const App = ({ children, title, className, metaTags }) => (
   <html>
     <head>
       <meta charSet='UTF-8'/>
@@ -18,7 +20,7 @@ export const App = ({ children, title, className, MetaTagsComponent }) => (
       <link rel="apple-touch-icon" sizes="152x152" href={icon('pinecone-burke/005', 152)}/>
       <link rel="apple-touch-icon" sizes="180x180" href={icon('pinecone-burke/005', 180)}/>
       <link rel="apple-touch-icon" sizes="167x167" href={icon('pinecone-burke/005', 167)}/>
-      <MetaTagsComponent />
+      <MetaTags {...metaTags} />
     </head>
     <body className={className}>
       { children }

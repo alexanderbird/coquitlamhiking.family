@@ -9,6 +9,7 @@ import { Map as MapIcon } from './icons/Map';
 import { MapPin } from './icons/MapPin';
 import { List as ListIcon } from './icons/List';
 import { Share as ShareIcon } from './icons/Share';
+import { getHikeThumbnailUrl } from './getHikeThumbnailUrl';
 
 function hikeDescription(hike) {
   let result = 'From our digital scrapbook of our favorite hikes in the area: this one has ';
@@ -20,29 +21,13 @@ function hikeDescription(hike) {
   return result;
 }
 
-const MetaTags: FunctionComponent<{ hike: any }> = ({ hike }) => {
-  const title = `${hike.name} | Coquitlam Family Hikes`;
-  const description = hikeDescription(hike);
-  const url = `https://hiker.family/${hike.slug}.html`;
-  const image = hike.images && hike.images.length && `https://images.hiker.family/${hike.slug}/${parseImage(hike.images[0]).name}.jpg?nf_resize=smartcrop&w=800&h=800`;
-  return (<Fragment>
-    <meta name="description" content={description} />
+const metaTags = hike => ({
+  title: `${hike.name} | Coquitlam Family Hikes`,
+  description: hikeDescription(hike),
+  path: `${hike.slug}.html`,
+  image: getHikeThumbnailUrl(hike)
+})
 
-    {/* Open Graph / Facebook */}
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={url}/>
-    <meta property="og:title" content={title}/>
-    <meta property="og:description" content={description}/>
-    { image && <meta property="og:image" content={image}/> }
-
-    {/* Twitter */}
-    <meta property="twitter:card" content="summary_large_image"/>
-    <meta property="twitter:url" content={url}/>
-    <meta property="twitter:title" content={title}/>
-    <meta property="twitter:description" content={description}/>
-    { image && <meta property="twitter:image" content={image}/> }
-  </Fragment>);
-}
 
 const map = ({ hike, width, height }) => (
   <Map latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} zoom={14} width={width} height={height}>
@@ -63,7 +48,7 @@ const image = ({ width, height, name, hikeSlug }) => (
 )
 
 export const HikePage: FunctionComponent<{ hike: any }> = ({ hike }) => (
-  <App title={`${hike.name} | Coquitlam Family Hikes`} className='hike-page' MetaTagsComponent={() => <MetaTags hike={hike} />}>
+  <App title={`${hike.name} | Coquitlam Family Hikes`} className='hike-page' metaTags={metaTags(hike)}>
     <nav>
       <h2>{hike.name}</h2>
       <a class='map-link' href='/#map-tab'><MapIcon /></a>

@@ -4,57 +4,28 @@ import { App } from './App';
 import { Map } from './Map';
 import { MapMarker } from './MapMarker';
 import { TrailSummary } from './TrailSummary';
-import { parseImage } from './parseImage';
-import { Map as MapIcon } from './icons/Map';
-import { List as ListIcon } from './icons/List';
+import { getHikeThumbnailUrl } from './getHikeThumbnailUrl';
+import { Nav } from './Nav';
 
 const previewImageCSS = hike => {
-  const thumbnail = getHikeThumbnail(hike);
+  const thumbnail = getHikeThumbnailUrl(hike);
   if (!thumbnail) return '';
-  return `url(https://images.hiker.family/${hike.slug}/${thumbnail}.jpg?nf_resize=smartcrop&w=300&h=400)`;
+  return `url(${thumbnail})`;
 }
 
-const getHikeThumbnail = hike => {
-  try {
-    if (hike.thumbnail) return hike.thumbnail;
-    if (!hike.images || !hike.images.length) return false;
-    const thumbnail = hike.images.map(parseImage).find(x => !x.isMap);
-    if (!thumbnail) return false;
-    return thumbnail.name;
-  } catch(e) {
-    e.message = `Cannot find preview image name for ${hike.slug}. ${e.message}`;
-    throw e;
-  }
+const metaTags = {
+  title: "🥾 Coquitlam Family Hikes",
+  description: "A digital scrapbook of our favorite walks and hikes in the Coquitlam area." ,
+  image: "https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=800&h=800",
+  path: ""
 }
-
-const MetaTags = () => (<>
-  <meta name="description" content="A digital scrapbook of our favorite walks and hikes in the Coquitlam area." />
-
-  {/* Open Graph / Facebook */}
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://hiker.family/"/>
-  <meta property="og:title" content="🥾 Coquitlam Family Hikes"/>
-  <meta property="og:description" content="A digital scrapbook of our favorite walks and hikes in the Coquitlam area."/>
-  <meta property="og:image" content="https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=800&h=800"/>
-
-  {/* Twitter */}
-  <meta property="twitter:card" content="summary_large_image"/>
-  <meta property="twitter:url" content="https://hiker.family/"/>
-  <meta property="twitter:title" content="🥾 Coquitlam Family Hikes"/>
-  <meta property="twitter:description" content="A digital scrapbook of our favorite walks and hikes in the Coquitlam area."/>
-  <meta property="twitter:image" content="https://images.hiker.family/deboville-slough/004.jpg?nf_resize=smartcrop&w=800&h=800"/>
-</>)
 
 export const MainPage = ({ hikes, mapCenter }) => (
-  <App title='Coquitlam Family Hikes' className='main-page' MetaTagsComponent={MetaTags}>
+  <App title='Coquitlam Family Hikes' className='main-page' metaTags={metaTags}>
     <div id='map-tab'/>
     <div id='list-tab'/>
     <div class='main'>
-      <nav>
-        <h1>Coquitlam Family Hikes</h1>
-        <a class='map-link' href='/#map-tab'><MapIcon /></a>
-        <a class='list-link' href='/#list-tab'><ListIcon /></a>
-      </nav>
+      <Nav />
       <Map longitude={mapCenter.longitude} latitude={mapCenter.latitude} zoom={mapCenter.zoom} >
         { hikes.map(hike => (
           <MapMarker latitude={hike.trailhead.latitude} longitude={hike.trailhead.longitude} title={hike.name} >
