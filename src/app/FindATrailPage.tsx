@@ -3,7 +3,7 @@ import { h, Fragment } from 'preact';
 import { App } from './App';
 import { Map } from './Map';
 import { MapMarker } from './MapMarker';
-import { ViewIcon } from './TrailSummary';
+import { TrailSummary } from './TrailSummary';
 import { getHikeThumbnailUrl } from './getHikeThumbnailUrl';
 import { Nav } from './Nav';
 
@@ -28,7 +28,7 @@ const HikeTile = ({ hikes, slug, genome, notes, name }: HikeTileProps) => {
     <a class='hike-tile' href={`/trail/${hike.slug}.html`} data-genome={genome}>
       <img src={getHikeThumbnailUrl(hike)} />
       <h4>{name || hike.name}</h4>
-      <ViewIcon {...hike} />
+      <TrailSummary {...hike} />
       <p>{notes}</p>
     </a>
   );
