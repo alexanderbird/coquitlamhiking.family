@@ -148,7 +148,9 @@ export const FindATrailPage = ({ hikes }) => (
             attributes={['weather-any', 'duration-120', 'terrain-large', 'incline-hilly']} />
           <HikeTile hikes={hikes} slug='jug-island'
             attributes={['weather-any', 'duration-120', 'terrain-large', 'incline-hilly']} />
+          <button class='find-page__button-reset'>Reset</button>
         </div>
+
       </div>
 
     </div>
