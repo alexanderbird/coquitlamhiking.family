@@ -123,7 +123,7 @@ export const FindATrailPage = ({ hikes }) => (
             notes="for a loop, try the Deboville Slough. If it's quite windy, consider Colony Farm Regional Park instead." />
           <HikeTile hikes={hikes} slug='admiralty-point' genome='f2ls'
             notes="option to turn back at Cod Rock or Maple Beach" />
-          <HikeTile hikes={hikes} slug='deiner-creek' genome='h1lh' />
+          <HikeTile hikes={hikes} slug='deiner-creek' genome='h2lh' />
           <HikeTile hikes={hikes} slug='pinecone-burke' genome='e2lh'
             name="Pinecone Burke: Frank's to Hustler via Conifer"
             notes="Frank's &rarr; Conifer Drive &rarr; Hustler" />
