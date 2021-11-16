@@ -22,15 +22,15 @@ const Checkbox = ({ name, children, checked }: { name: string, children: any, ch
 interface HikeTileProps {
   hikes: any[];
   slug: string;
-  attributes: string[];
+  genome: string;
   name?: string;
   notes?: string;
 }
 
-const HikeTile = ({ hikes, slug, attributes, notes, name }: HikeTileProps) => {
+const HikeTile = ({ hikes, slug, genome, notes, name }: HikeTileProps) => {
   const hike = hikes.find(x => x.slug === slug);
   return (
-    <a class='hike-tile' href={`/trail/${hike.slug}.html`} data-attributes={'~' + attributes.join('~') + '~'}>
+    <a class='hike-tile' href={`/trail/${hike.slug}.html`} data-genome={genome}>
       <img src={getHikeThumbnailUrl(hike)} />
       <h4>{name || hike.name}</h4>
       <ViewIcon {...hike} />
@@ -68,7 +68,7 @@ class AttributeValue {
 const options = [
   new AttributeType({ index: 0, label: 'Weather', values: [
     new AttributeValue('h', 'Very Hot'),
-    new AttributeValue('f', 'Very Foggy'),
+    new AttributeValue('f', 'Foggy'),
     new AttributeValue('e', 'Everything Else')
   ] }),
   new AttributeType({ index: 1, label: 'Duration', values: [
@@ -101,7 +101,7 @@ const OptionFieldSet = ({ option }: { option: AttributeType }) => {
 
 const OptionInput = ({ value }: { value: AttributeValue }) => {
   return (<>
-    <input type='checkbox' id={value.id} />
+    <input type='checkbox' id={value.id} data-code={value.code} />
     <label for={value.id}>{ value.label }</label>
   </>);
 }
@@ -119,35 +119,26 @@ export const FindATrailPage = ({ hikes }) => (
         }
 
         <div class='trails'>
-          <HikeTile hikes={hikes} slug='galette-ave-coquitlam-river'
-            attributes={['weather-any', 'duration-30', 'terrain-small', 'incline-flat']} />
-          <HikeTile hikes={hikes} slug='rocky-point-pier' 
-            attributes={['weather-any', 'duration-30', 'terrain-smooth', 'incline-flat']} />
-          <HikeTile hikes={hikes} slug='minnekhada' notes='Fern Trail, Lodge Trail&comma; or Addington Lookout Trail'
-            attributes={['weather-any', 'duration-30', 'terrain-small', 'incline-ups-and-downs']} />
-          <HikeTile hikes={hikes} slug='harper-park' 
-            attributes={['weather-any', 'duration-30', 'terrain-smooth', 'incline-hilly']} />
-          <HikeTile hikes={hikes} slug='pitt-river' notes="for a loop, try the Deboville Slough. If it's quite windy, consider Colony Farm Regional Park instead."
-            attributes={['weather-any', 'duration-60', 'terrain-smooth', 'incline-flat']} />
-          <HikeTile hikes={hikes} slug='admiralty-point' 
-            notes="option to turn back at Cod Rock or Maple Beach"
-            attributes={['weather-any', 'duration-60', 'terrain-large', 'incline-ups-and-downs']} />
-          <HikeTile hikes={hikes} slug='deiner-creek'
-            attributes={['weather-summer', 'duration-60', 'terrain-large', 'incline-hilly']} />
-          <HikeTile hikes={hikes} slug='pinecone-burke' 
+          <HikeTile hikes={hikes} slug='galette-ave-coquitlam-river' genome='e1sf' />
+          <HikeTile hikes={hikes} slug='rocky-point-pier' genome='e1gf' />
+          <HikeTile hikes={hikes} slug='minnekhada' genome='e1ss'
+            notes='Fern Trail, Lodge Trail&comma; or Addington Lookout Trail' />
+          <HikeTile hikes={hikes} slug='harper-park' genome='e1gh' />
+          <HikeTile hikes={hikes} slug='pitt-river' genome='e2gf'
+            notes="for a loop, try the Deboville Slough. If it's quite windy, consider Colony Farm Regional Park instead." />
+          <HikeTile hikes={hikes} slug='admiralty-point' genome='f2ls'
+            notes="option to turn back at Cod Rock or Maple Beach" />
+          <HikeTile hikes={hikes} slug='deiner-creek' genome='h1lh' />
+          <HikeTile hikes={hikes} slug='pinecone-burke' genome='e2lh'
             name="Pinecone Burke: Frank's to Hustler via Conifer"
-            notes="Frank's &rarr; Conifer Drive &rarr; Hustler"
-            attributes={['weather-any', 'duration-60', 'terrain-large', 'incline-hilly']} />
-          <HikeTile hikes={hikes} slug='pinecone-burke' 
+            notes="Frank's &rarr; Conifer Drive &rarr; Hustler" />
+          <HikeTile hikes={hikes} slug='pinecone-burke' genome='h3lh'
             name="Pinecone Burke: Woodland Walk to Lower Vic's"
-            notes="Recycle &rarr; Woodland Walk &rarr Lower Vic's &rarr; wading pools between waterfalls"
-            attributes={['weather-summer', 'duration-120', 'terrain-large', 'incline-hilly']} />
-          <HikeTile hikes={hikes} slug='pinecone-burke' 
+            notes="Recycle &rarr; Woodland Walk &rarr Lower Vic's &rarr; wading pools between waterfalls" />
+          <HikeTile hikes={hikes} slug='pinecone-burke' genome='e3lh'
             name="Pinecone Burke: Frank's & the Gravel Road Climb to the View"
-            notes="Frank's &rarr; Gravel Road Climb"
-            attributes={['weather-any', 'duration-120', 'terrain-large', 'incline-hilly']} />
-          <HikeTile hikes={hikes} slug='jug-island'
-            attributes={['weather-any', 'duration-120', 'terrain-large', 'incline-hilly']} />
+            notes="Frank's &rarr; Gravel Road Climb" />
+          <HikeTile hikes={hikes} slug='jug-island' genome='f3lh' />
           <button class='find-page__button-reset'>Reset</button>
         </div>
 
