@@ -5,6 +5,8 @@ import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from 'workbox-strategi
 import { CacheableResponsePlugin } from 'workbox-cacheable-response';
 const ONE_DAY_IN_SECONDS = 24 * 60 * 60;
 
+self.__WB_DISABLE_DEV_LOGS = true;
+
 precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(
