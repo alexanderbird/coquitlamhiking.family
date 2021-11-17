@@ -13,6 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => onNext(optionFieldSet));
   });
 
-  document.querySelector('.find-page__button-reset').addEventListener('click', onPageReset);
-  document.querySelector('.find-page__button-previous').addEventListener('click', () => onPrevious(document.querySelector('.trails')));
+  tryQuerySelector('.find-page__button-reset', e => e.addEventListener('click', onPageReset));
+  tryQuerySelector('.find-page__button-previous', e => e.addEventListener('click', () => onPrevious(document.querySelector('.trails'))));
 });
+
+function tryQuerySelector(selector, callback) {
+  const element = document.querySelector(selector);
+  if (element) {
+    callback(element);
+  }
+}
