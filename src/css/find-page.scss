@@ -5,6 +5,10 @@
     display: none;
   }
 
+  button {
+    padding: 1em;
+  }
+
   .option-field-set {
     --display: flex;
     display: none;
@@ -108,6 +112,8 @@
       border-radius: 10px;
       margin-left: auto;
       margin-right: auto;
+      color: inherit;
+      text-decoration: none;
 
       img {
         width: 50px;

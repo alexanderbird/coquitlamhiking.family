@@ -25,17 +25,18 @@ interface HikeTileProps {
 const HikeTile = ({ hikes, slug, genome, notes, name }: HikeTileProps) => {
   const hike = hikes.find(x => x.slug === slug);
   return (
-    <div
+    <a
       class='hike-tile'
+      href={`./trail/${hike.slug}.html`}
       data-genome={genome}
       style={`--background: ${getHikeThumbnailCSSUrl(hike)};`}
       >
       <div class='hike-tile__text'>
-        <h3><a href={`./trail/${hike.slug}.html`}>{name || hike.name}</a></h3>
+        <h3>{name || hike.name}</h3>
         <TrailSummary {...hike} />
         <p>{notes}</p>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -153,7 +154,7 @@ export const FindATrailPage = ({ hikes }) => (
           <HikeTile hikes={hikes} slug='jug-island' genome='f3lh' />
           <div class='find-page__button-area'>
             <button class='find-page__button-previous'>Previous</button>
-            <button class='find-page__button-reset'>Reset</button>
+            <button class='find-page__button-reset'>Start Over</button>
           </div>
         </div>
 
