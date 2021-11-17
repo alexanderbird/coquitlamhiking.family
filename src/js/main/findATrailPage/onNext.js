@@ -38,7 +38,9 @@ function filterOptions(optionFieldSet, currentSelectionPattern) {
 }
 
 function autoProceedIfApplicable(optionFieldSet) {
-  if (optionFieldSet.querySelectorAll('label:not(.option-input__label--hidden)').length < 2) {
+  const nonWildcardOptions = Array.from(optionFieldSet.querySelectorAll('label:not(.option-input__label--hidden)'))
+    .filter(x => x.dataset.code !== '.');
+  if (nonWildcardOptions.length < 2) {
     onNext(optionFieldSet);
   }
 }

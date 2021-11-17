@@ -24,7 +24,9 @@ function markPreviousAsIncomplete(previousOptionFieldSet) {
 }
 
 function goBackAgainIfOnlyOneOption(previousOptionFieldSet) {
-  if (previousOptionFieldSet.querySelectorAll('.option-input__label:not(.option-input__label--hidden)').length < 2) {
+  const nonWildcardOptions = Array.from(previousOptionFieldSet.querySelectorAll('label:not(.option-input__label--hidden)'))
+    .filter(x => x.dataset.code !== '.');
+  if (nonWildcardOptions.length < 2) {
     onPrevious(previousOptionFieldSet);
   }
 }

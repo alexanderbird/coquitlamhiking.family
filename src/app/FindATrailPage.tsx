@@ -45,12 +45,13 @@ class AttributeType {
   index: number;
   values: AttributeValue[];
   label: string;
+  description: string;
   id: string;
 
-  constructor({ index, values, label }) {
+  constructor({ index, values, label, description }) {
     this.id = 'attribute-type--' + toID(label);
     this.values = [...values, new AttributeValue('.', 'No Preference')];
-    Object.assign(this, { index, label });
+    Object.assign(this, { index, label, description });
   }
 }
 
@@ -79,38 +80,48 @@ function uuidv4() {
 }
 
 const options = [
-  new AttributeType({ index: 0, label: 'Weather', values: [
-    new AttributeValue('h', 'Very Hot', 'something with water to cool off in'),
-    new AttributeValue('f', 'Foggy', 'something sheltered that looks beautiful in the fog'),
-    new AttributeValue('e', 'Regular Weather', 'everything other than "Very Hot" or "Foggy"')
-  ] }),
-  new AttributeType({ index: 1, label: 'Duration', values: [
-    new AttributeValue('1', 'Short', 'less than one hour'),
-    new AttributeValue('2', 'Medium', 'one to two hours'),
-    new AttributeValue('3', 'Long', 'two or more hours'),
-  ] }),
-  new AttributeType({ index: 2, label: 'Terrain', values: [
-    new AttributeValue('g', 'Smooth Gravel', 'suitable for strollers and casual walking'),
-    new AttributeValue('s', 'Small Rocks & Roots', 'they\'re there, but you can mostly ignore them'),
-    new AttributeValue('l', 'Large Rocks & Roots', 'obstacles will require big steps and a conscious effort to cross'),
-  ] }),
-  new AttributeType({ index: 3, label: 'Incline', values: [
-    new AttributeValue('f', 'Flat'),
-    new AttributeValue('s', 'Some Ups & Downs', 'some gentle inclines throughout the trail'),
-    new AttributeValue('h', 'Quite Hilly', 'stairs or steep hills for some or all of the hike'),
-  ] }),
+  new AttributeType({ index: 0, label: 'Weather', 
+    description: "What weather do you expect on the day of the hike?", 
+    values: [
+      new AttributeValue('h', 'Very Hot', 'something with water to cool off in'),
+      new AttributeValue('f', 'Foggy', 'something sheltered that looks beautiful in the fog'),
+      new AttributeValue('e', 'Regular Weather', 'anything other than "Very Hot" or "Foggy"')
+    ]
+  }),
+  new AttributeType({ index: 1, label: 'Duration',
+    description: "How long would you like to walk for?",
+    values: [
+      new AttributeValue('1', 'Short', 'less than one hour'),
+      new AttributeValue('2', 'Medium', 'one to two hours'),
+      new AttributeValue('3', 'Long', 'two or more hours'),
+    ]
+  }),
+  new AttributeType({ index: 2, label: 'Terrain',
+    description: "What trail surface would you like?",
+    values: [
+      new AttributeValue('g', 'Smooth Gravel', 'suitable for strollers and casual walking'),
+      new AttributeValue('s', 'Small Rocks & Roots', 'they\'re there, but you can mostly ignore them'),
+      new AttributeValue('l', 'Large Rocks & Roots', 'obstacles will require big steps and a conscious effort to cross'),
+    ]
+  }),
+  new AttributeType({ index: 3, label: 'Incline',
+    description: "How steep?",
+    values: [
+      new AttributeValue('f', 'Flat'),
+      new AttributeValue('s', 'Some Ups & Downs', 'some gentle inclines throughout the trail'),
+      new AttributeValue('h', 'Quite Hilly', 'stairs or steep hills for some or all of the hike'),
+    ]
+  }),
 ]
 
 const OptionFieldSet = ({ option }: { option: AttributeType }) => {
   return (
     <fieldset class='option-field-set' id={option.id} data-index={option.index}>
       <legend>{option.label}</legend>
-      <div class='option-field-set__input-area generic-row-of-elements'>
+      <p class='option-field-set__description'>{option.description}</p>
+      <div class='option-field-set__input-area'>
+        <button class='option-field-set__button-previous generic-row-'>↶ Previous Question</button>
         { option.values.map(optionValue => <OptionInput value={optionValue} />) }
-      </div>
-      <hr />
-      <div class='option-field-set__button-area generic-row-of-elements'>
-        <button class='option-field-set__button-previous'>Previous</button>
       </div>
     </fieldset>
   );
@@ -119,7 +130,7 @@ const OptionFieldSet = ({ option }: { option: AttributeType }) => {
 const OptionInput = ({ value }: { value: AttributeValue }) => {
   return (<>
     <input class='option-input__checkbox' type='checkbox' id={value.id} data-code={value.code} />
-    <label class='option-input__label' for={value.id}>
+    <label class='option-input__label' for={value.id} data-code={value.code}>
       <b>{ value.label }</b>
       <i>{value.explanation}</i>
     </label>
@@ -133,20 +144,18 @@ export const FindATrailPage = ({ hikes }) => (
     <div class='main'>
       <Nav active='find' title='Find A Trail'/>
       <div class='trailfinder'>
-        <p class='trailfinder__prompt'>What type of hike or walk are you looking for?</p>
-
         {
           options.map(option => <OptionFieldSet option={option} />)
         }
 
         <div class='trails'>
           <HikeTile hikes={hikes} slug='pinecone-burke' genome='f1sh' image="002"
-            name="Pinecone Burke: Downhill of Harper Access Road"
-            notes="Park at the yellow gate. There's a trail 100m south of the gate. It's not a listed mountain bike trail so you don't have to worry about cyclists" />
+            name="Pinecone Burke: Unnamed trail South of Harper Access Road"
+            notes="Park at the yellow gate. There's a trail 100m south of the gate. It's not a listed mountain bike trail so you don't have to worry about cyclists." />
           <HikeTile hikes={hikes} slug='galette-ave-coquitlam-river' genome='e1sf' />
           <HikeTile hikes={hikes} slug='rocky-point-pier' genome='e1gf' />
           <HikeTile hikes={hikes} slug='minnekhada' genome='e1ss'
-            notes='Fern Trail, Lodge Trail&comma; or Addington Lookout Trail' />
+            notes='Fern Trail, Lodge Trail, or Addington Lookout Trail' />
           <HikeTile hikes={hikes} slug='harper-park' genome='e1gh' />
           <HikeTile hikes={hikes} slug='pitt-river' genome='e2gf'
             notes="for a loop, try the Deboville Slough. If it's quite windy, consider Colony Farm Regional Park instead." />
@@ -158,13 +167,13 @@ export const FindATrailPage = ({ hikes }) => (
             notes="Frank's &rarr; Conifer Drive &rarr; Hustler" />
           <HikeTile hikes={hikes} slug='pinecone-burke' genome='h3lh' image="008"
             name="Pinecone Burke: Woodland Walk to Lower Vic's"
-            notes="Recycle &rarr; Woodland Walk &rarr Lower Vic's &rarr; wading pools between waterfalls" />
+            notes="Recycle &rarr; Woodland Walk &rarr; Lower Vic's &rarr; wading pools between waterfalls" />
           <HikeTile hikes={hikes} slug='pinecone-burke' genome='e3lh' image="007"
             name="Pinecone Burke: Frank's & the Gravel Road Climb to the View"
             notes="Frank's &rarr; Gravel Road Climb" />
           <HikeTile hikes={hikes} slug='jug-island' genome='f3lh' />
           <div class='find-page__button-area'>
-            <button class='find-page__button-previous'>Previous</button>
+            <button class='find-page__button-previous'>Previous Question</button>
             <button class='find-page__button-reset'>Start Over</button>
           </div>
         </div>
