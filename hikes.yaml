@@ -346,6 +346,8 @@
   view:
     type: waterfall
     text: Waterfall
+  hilly: yes
+  stroller: no
   notes: |
     Follow the Munro Lake Trail until you get to the Dennet Lake Bluffs rock
     climbing area. Backtrack a few minutes to just below the large rock and head

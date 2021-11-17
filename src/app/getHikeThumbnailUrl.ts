@@ -1,14 +1,14 @@
 import { parseImage } from './parseImage';
 
-export const getHikeThumbnailCSSUrl = hike => {
-  const thumbnail = getHikeThumbnailUrl(hike);
+export const getHikeThumbnailCSSUrl = (hike, image = null) => {
+  const thumbnail = getHikeThumbnailUrl(hike, image);
   if (!thumbnail) return '';
   return `url(${thumbnail})`;
 }
 
 
-export const getHikeThumbnailUrl = hike => {
-  const thumbnail = getHikeThumbnail(hike);
+export const getHikeThumbnailUrl = (hike, image = null) => {
+  const thumbnail = image || getHikeThumbnail(hike);
   if (!thumbnail) return '';
   return `https://images.hiker.family/${hike.slug}/${thumbnail}.jpg?nf_resize=smartcrop&w=300&h=400`;
 }

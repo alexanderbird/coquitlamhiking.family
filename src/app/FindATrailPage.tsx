@@ -18,18 +18,19 @@ interface HikeTileProps {
   hikes: any[];
   slug: string;
   genome: string;
+  image?: string;
   name?: string;
   notes?: string;
 }
 
-const HikeTile = ({ hikes, slug, genome, notes, name }: HikeTileProps) => {
+const HikeTile = ({ hikes, slug, genome, notes, name, image }: HikeTileProps) => {
   const hike = hikes.find(x => x.slug === slug);
   return (
     <a
       class='hike-tile'
       href={`./trail/${hike.slug}.html`}
       data-genome={genome}
-      style={`--background: ${getHikeThumbnailCSSUrl(hike)};`}
+      style={`--background: ${getHikeThumbnailCSSUrl(hike, image)};`}
       >
       <div class='hike-tile__text'>
         <h3>{name || hike.name}</h3>
@@ -129,7 +130,7 @@ export const FindATrailPage = ({ hikes }) => (
         }
 
         <div class='trails'>
-          <HikeTile hikes={hikes} slug='pinecone-burke' genome='f1sh'
+          <HikeTile hikes={hikes} slug='pinecone-burke' genome='f1sh' image="002"
             name="Pinecone Burke: Downhill of Harper Access Road"
             notes="Park at the yellow gate. There's a trail 100m south of the gate. It's not a listed mountain bike trail so you don't have to worry about cyclists" />
           <HikeTile hikes={hikes} slug='galette-ave-coquitlam-river' genome='e1sf' />
@@ -141,14 +142,14 @@ export const FindATrailPage = ({ hikes }) => (
             notes="for a loop, try the Deboville Slough. If it's quite windy, consider Colony Farm Regional Park instead." />
           <HikeTile hikes={hikes} slug='admiralty-point' genome='f2ls'
             notes="option to turn back at Cod Rock or Maple Beach" />
-          <HikeTile hikes={hikes} slug='deiner-creek' genome='h2lh' />
-          <HikeTile hikes={hikes} slug='pinecone-burke' genome='e2lh'
+          <HikeTile hikes={hikes} slug='deiner-creek' genome='h2lh' image="004" />
+          <HikeTile hikes={hikes} slug='pinecone-burke' genome='e2lh' image="005"
             name="Pinecone Burke: Frank's to Hustler via Conifer"
             notes="Frank's &rarr; Conifer Drive &rarr; Hustler" />
-          <HikeTile hikes={hikes} slug='pinecone-burke' genome='h3lh'
+          <HikeTile hikes={hikes} slug='pinecone-burke' genome='h3lh' image="008"
             name="Pinecone Burke: Woodland Walk to Lower Vic's"
             notes="Recycle &rarr; Woodland Walk &rarr Lower Vic's &rarr; wading pools between waterfalls" />
-          <HikeTile hikes={hikes} slug='pinecone-burke' genome='e3lh'
+          <HikeTile hikes={hikes} slug='pinecone-burke' genome='e3lh' image="007"
             name="Pinecone Burke: Frank's & the Gravel Road Climb to the View"
             notes="Frank's &rarr; Gravel Road Climb" />
           <HikeTile hikes={hikes} slug='jug-island' genome='f3lh' />
