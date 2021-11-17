@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     button.addEventListener('click', () => onPrevious(optionFieldSet));
   });
 
-  Array.from(document.querySelectorAll('.option-field-set__button-next')).forEach(button => {
+  Array.from(document.querySelectorAll('.option-input__checkbox')).forEach(button => {
     const optionFieldSet = button.closest('.option-field-set');
     button.addEventListener('click', () => onNext(optionFieldSet));
   });

@@ -1,6 +1,10 @@
 .trailfinder {
   padding: 10px;
 
+  .trailfinder__prompt {
+    font-size: 1.6em;
+  }
+
   &[data-selection-pattern*="("] .trailfinder__prompt {
     display: none;
   }

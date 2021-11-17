@@ -3,6 +3,7 @@ import { getPreviousSibling } from './domSearching.js';
 export function onPrevious(optionFieldSet) {
   revertState(optionFieldSet);
   const previousOptionFieldSet = getPreviousSibling(optionFieldSet, '.option-field-set');
+  deselectPrevious(previousOptionFieldSet);
   markPreviousAsIncomplete(previousOptionFieldSet)
   goBackAgainIfOnlyOneOption(previousOptionFieldSet);
 }
@@ -10,6 +11,12 @@ export function onPrevious(optionFieldSet) {
 function revertState(optionFieldSet) {
   const trailfinderData = optionFieldSet.closest('.trailfinder').dataset;
   trailfinderData.selectionPattern = trailfinderData.selectionPattern.replace(/\([^(]+\)$/, '');
+}
+
+function deselectPrevious(previousOptionFieldSet) {
+  Array.from(previousOptionFieldSet.querySelectorAll('.option-input__checkbox')).forEach(input => {
+    input.checked = false;
+  });
 }
 
 function markPreviousAsIncomplete(previousOptionFieldSet) {

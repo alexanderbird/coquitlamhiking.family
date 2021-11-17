@@ -49,7 +49,8 @@ class AttributeType {
 
   constructor({ index, values, label }) {
     this.id = 'attribute-type--' + toID(label);
-    Object.assign(this, { index, values, label });
+    this.values = [...values, new AttributeValue('.', 'No Preference')];
+    Object.assign(this, { index, label });
   }
 }
 
@@ -63,16 +64,25 @@ class AttributeValue {
   explanation?: string;
   id: string;
   constructor(code, label, explanation = '') {
-    this.id = 'attribute-value--' + toID(label) + '--' + code;
+    this.id = 'attribute-value--' + uuidv4();
     Object.assign(this, { code, label, explanation });
   }
+}
+
+function uuidv4() {
+  // from https://www.codegrepper.com/code-examples/typescript/javascript+one-line+uuid
+  return 'xxxxxxxxxxxxxxxxxxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    var r = (Math.random() * 16) | 0,
+      v = c == 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
 }
 
 const options = [
   new AttributeType({ index: 0, label: 'Weather', values: [
     new AttributeValue('h', 'Very Hot', 'something with water to cool off in'),
     new AttributeValue('f', 'Foggy', 'something sheltered that looks beautiful in the fog'),
-    new AttributeValue('e', 'Anything Else')
+    new AttributeValue('e', 'Regular Weather', 'everything other than "Very Hot" or "Foggy"')
   ] }),
   new AttributeType({ index: 1, label: 'Duration', values: [
     new AttributeValue('1', 'Short', 'less than one hour'),
@@ -101,7 +111,6 @@ const OptionFieldSet = ({ option }: { option: AttributeType }) => {
       <hr />
       <div class='option-field-set__button-area generic-row-of-elements'>
         <button class='option-field-set__button-previous'>Previous</button>
-        <button class='option-field-set__button-next'>Next</button>
       </div>
     </fieldset>
   );
@@ -125,6 +134,7 @@ export const FindATrailPage = ({ hikes }) => (
       <Nav active='find' title='Find A Trail'/>
       <div class='trailfinder'>
         <p class='trailfinder__prompt'>What type of hike or walk are you looking for?</p>
+
         {
           options.map(option => <OptionFieldSet option={option} />)
         }
