@@ -84,14 +84,18 @@
     Slough, so if you want a really really long walk you could start here, walk
     to the start of the Deboville Slough north trail, and then walk along there. 
 
+  thumbnail: "001"
   images:
-    - map@4x6
-    - 001@4x3
-    - 002@4x3
-    - 003@4x3
-    - 004@4x3
-    - 005@5x5
-    - 006@7x5
+    - 007@12x3
+    - map@4x9
+    - 004@6x5
+    - 002@2x2
+    - 003@2x2
+    - 009@2x3
+    - 008@6x4
+    - 005@2x2
+    - 006@6x4
+    - 001@6x4
 
 - name: Deboville Slough - North Side
   slug: deboville-slough
