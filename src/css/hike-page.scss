@@ -9,11 +9,11 @@
 
   .image-gallery {
     margin-top: 0;
-    margin: 10px;
+    margin: var(--roundness);
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-auto-rows: calc(((100vw - 20px) / 12) - 10px);
-    grid-gap: 10px;
+    grid-gap: var(--roundness);
     grid-auto-flow: dense;
   }
 
@@ -28,8 +28,8 @@
 
   .hike-topmatter {
     border-radius: var(--roundness);
-    margin: 10px;
-    padding: 10px;
+    margin: var(--roundness);
+    padding: var(--roundness);
     background-color: #FFF2;
 
     &__links {

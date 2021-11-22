@@ -11,8 +11,8 @@
     width: calc(100vw - 20px);
     top: 0;
     left: 0;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: var(--roundness);
+    padding-right: var(--roundness);
 
     nav {
       flex: 1;
@@ -25,10 +25,10 @@
     }
 
     #map {
-      height: calc((var(--vh, 1vh) * 100) - 10px - var(--header-height));
+      height: calc((var(--vh, 1vh) * 100) - var(--roundness) - var(--header-height));
       width: 100%;
       border-radius: var(--roundness);
-      margin-bottom: 10px;
+      margin-bottom: var(--roundness);
     }
   }
 
@@ -40,11 +40,11 @@
   }
 
   .hike-tiles {
-    margin: 10px;
+    margin: var(--roundness);
     margin-top: 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    grid-gap: 10px;
+    grid-gap: var(--roundness);
     @media (max-width: 500px) {
       grid-template-columns: 1fr;
     }
@@ -62,14 +62,14 @@
     flex: 1;
     flex-grow: 1;
     background-color: #FFF1;
-    padding: 10px;
+    padding: var(--roundness);
     border-top-left-radius: var(--roundness);
     border-bottom-left-radius: var(--roundness);
   }
   .hike-tile__right-side {
     flex: 1;
     flex-grow: 1;
-    padding: 10px;
+    padding: var(--roundness);
   }
   .hike-tile__text {
     position: relative;
@@ -97,7 +97,7 @@
   }
   .trailhead-map-marker-detail__text {
     background-color: #FFF9;
-    padding: 10px;
+    padding: var(--roundness);
     padding-top: 0;
   }
 }
